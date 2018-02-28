@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './app.css';
 import Dashboard from './category/Dashboard';
@@ -12,25 +12,6 @@ export default class App extends Component {
   render() {
     
     return (
-
-      <Router>
-        <div id="container">
-          <header id="header">
-            <h1><span className="fa fa-bolt fa-2x"></span>SpendLess</h1>
-          </header>
-          <main id="main" role="main">
-            <Switch>
-              <Route exact path="/" component={Dashboard}/>
-              <Redirect to="/"/>
-            </Switch>
-          </main>
-          <footer id="footer" role="contentinfo">
-            <small>&copy; 2018 Grace Provost &amp; Christina Mills | Student Work</small>
-          </footer>
-        </div>
-      </Router>
-    
-      
     );
   }
 }
