@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './categoryForm.css';
 
 export default class CategoryForm extends Component {
   
@@ -35,7 +36,7 @@ export default class CategoryForm extends Component {
     const { id, category, subCategory, budget } = this.state;
     const { buttonText } = this.props;
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="category-form" onSubmit={this.handleSubmit}>
         <fieldset>
           <legend className="clip">{id ? 'Edit a Category' : 'Add a Category'}</legend>
 
@@ -50,6 +51,7 @@ export default class CategoryForm extends Component {
           <label htmlFor="budget"> Budget:
           <input required name="budget" value={budget} onChange={this.handleChange}/>
           </label>
+
         </fieldset>
         <button type="submit">{ buttonText }</button>
       </form>

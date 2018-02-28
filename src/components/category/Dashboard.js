@@ -1,9 +1,10 @@
 
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { addCategory } from '../actions/categoryActions';
 import CategoryItem from './CategoryItem';
 import CategoryForm from './CategoryForm';
+import './dashboard.css';
 
 class Dashboard extends Component {
   
@@ -11,12 +12,16 @@ class Dashboard extends Component {
     const { categories, addCategory } = this.props;
     
     return (
-      <div>
-        <CategoryForm buttonText={'Add'} onComplete={addCategory}/>
-        <ul>
+      <Fragment>
+        <h1>Budget Dashboard</h1>
+        <div className="category-add">
+          <h2>Add A Category</h2>
+          <CategoryForm buttonText={'Add'} onComplete={addCategory}/>
+        </div>
+        <ul className="category-list">
           {categories.map(category => <CategoryItem key={category.id} categoryObj={category}/>)}
         </ul>
-      </div>);
+      </Fragment>);
   }
 }
 

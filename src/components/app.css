@@ -13,19 +13,13 @@
 #main { grid-area: main; } 
 #footer { grid-area: footer; }
 
+#main {
+  padding: $content-padding;
+  margin: 0 auto;
+  text-align: center;
+}
+
 #footer {
   text-align: center;
-  ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    li {
-      margin: .3rem .5rem;
-      a {
-        color: black;
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  }
+  background-color: $light-green;
 }
