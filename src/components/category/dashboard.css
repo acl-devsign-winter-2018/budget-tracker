@@ -1,0 +1,6 @@
+@import '../../styles/variables.css';
+
+.category-add {
+  background-color: $light-green;
+  border-radius: .4rem/.5rem;
+}

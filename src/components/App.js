@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './app.css';
 import Dashboard from './category/Dashboard';
+import Header from './header/Header';
 
 export default class App extends Component {
 
@@ -15,9 +16,7 @@ export default class App extends Component {
 
       <Router>
         <div id="container">
-          <header id="header">
-            <h1><span className="fa fa-bolt fa-2x"></span>SpendLess</h1>
-          </header>
+          <Header/>
           <main id="main" role="main">
             <Switch>
               <Route exact path="/" component={Dashboard}/>
