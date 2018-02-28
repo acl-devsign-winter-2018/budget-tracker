@@ -10,5 +10,18 @@ export function addCategory(category) {
     type: CATEGORY_CREATE,
     payload: category
   };
-  
+}
+
+export function updateCategory(category){
+  return {
+    type: CATEGORY_UPDATE,
+    payload: category
+  };
+}
+
+export function destroyCategory(id){
+  return {
+    type: CATEGORY_DESTROY,
+    payload: id
+  };
 }
