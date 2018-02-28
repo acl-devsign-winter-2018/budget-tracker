@@ -6,6 +6,10 @@ export default class CategoryForm extends Component {
     super(props); //accepts props and turns into state
 
     this.state = {
+      category: '',
+      subCategory: '',
+      budget: '',
+
       ...props.categoryObj //spreads props into state
     };
   }
