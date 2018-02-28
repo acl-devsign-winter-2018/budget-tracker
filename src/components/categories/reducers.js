@@ -20,7 +20,7 @@ export function category(state = [], { type, payload }) {
     }
 
     case CATEGORY_DESTROY: 
-      return state.filter(n => n.id !== payload.id);
+      return state.filter(n => n.id !== payload);
 
     default:
       return state;
