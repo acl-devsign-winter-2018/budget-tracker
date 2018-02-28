@@ -2,18 +2,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addCategory } from '../actions/categoryActions';
-import Category from './CategoryItem';
+import CategoryItem from './CategoryItem';
 import CategoryForm from './CategoryForm';
 
-class Categories extends Component {
+class Dashboard extends Component {
   
   render() {
     const { categories, addCategory } = this.props;
+    
     return (
       <div>
-        <CategoryForm onComplete={addCategory}/>
+        <CategoryForm buttonText={'Add'} onComplete={addCategory}/>
         <ul>
-          {categories.map(category => <Category key={category.id} {...category}/>)}
+          {categories.map(category => <CategoryItem key={category.id} categoryObj={category}/>)}
         </ul>
       </div>);
   }
@@ -22,4 +23,4 @@ class Categories extends Component {
 export default connect(
   state => ({ categories: state }),
   { addCategory }
-)(Categories);
+)(Dashboard);

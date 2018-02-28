@@ -6,7 +6,7 @@ export default class CategoryForm extends Component {
     super(props); //accepts props and turns into state
 
     this.state = {
-      ...props //spreads props into state
+      ...props.categoryObj //spreads props into state
     };
   }
 
@@ -29,6 +29,7 @@ export default class CategoryForm extends Component {
 
   render() {
     const { id, category, subCategory, budget } = this.state;
+    const { buttonText } = this.props;
     return (
       <form onSubmit={this.handleSubmit}>
         <fieldset>
@@ -46,7 +47,7 @@ export default class CategoryForm extends Component {
           <input required name="budget" value={budget} onChange={this.handleChange}/>
           </label>
         </fieldset>
-        <button type="submit">{ id ? 'Update' : 'Add' }</button>
+        <button type="submit">{ buttonText }</button>
       </form>
     );
   }

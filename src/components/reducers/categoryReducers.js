@@ -10,9 +10,9 @@ export function categories(state = [], { type, payload }) {
         payload
       ];
     case CATEGORY_REMOVE:
-      return state.filter(n => n.id !== payload);
+      return state.filter(category => category.id !== payload);
     case CATEGORY_UPDATE: {
-      const index = state.findIndex(n => n.id === payload.id);
+      const index = state.findIndex(category => category.id === payload.id);
       return [
         ...state.slice(0, index),
         { ...state[index], ...payload },
