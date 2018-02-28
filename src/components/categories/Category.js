@@ -5,7 +5,11 @@ import { updateCat, removeCat } from './actions';
 
 class Category extends Component {
 
-  state = {};
+  state = {
+    editing: false
+  };
+
+  
 
   render() {
     const { id, timestamp, name, budget, removeCat } = this.props;
