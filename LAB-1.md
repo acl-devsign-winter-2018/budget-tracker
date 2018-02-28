@@ -16,7 +16,7 @@ Your lab must include the normal setup and config items
 
 ##### redux
 ###### reducer
-* create a category reducer in your your reducer direcoty
+* create a category reducer in your your reducer directory
 * this reducer should support the following interactions 
   * `CATEGORY_CREATE`
   * `CATEGORY_UPDATE`
