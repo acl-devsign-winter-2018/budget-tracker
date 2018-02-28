@@ -14,7 +14,7 @@ it ('creates an add action', () => {
 const categoryToAdd = {
   id: 123,
   timestamp: '2/28/18',
-  name: 'groceries',
+  category: 'groceries',
   budget: 23
 };
 
@@ -25,7 +25,7 @@ it('creates an update action', () => {
     payload: {
       id: 123,
       timestamp: '2/28/18',
-      name: 'groceries',
+      category: 'groceries',
       budget: 23
     }
   });
