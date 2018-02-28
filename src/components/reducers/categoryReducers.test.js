@@ -1,4 +1,4 @@
-import { categories, CATEGORY_ADD, CATEGORY_REMOVE, CATEGORY_UPDATE } from './reducers';
+import { categories, CATEGORY_ADD, CATEGORY_REMOVE, CATEGORY_UPDATE } from './categoryReducers';
 
 const categoryToAdd = {
   id: 111,

@@ -1,4 +1,4 @@
-import { CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from './reducers';
+import { CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from '../reducers/categoryReducers';
 import shortid from 'shortid';
 
 export function addCategory(category) {

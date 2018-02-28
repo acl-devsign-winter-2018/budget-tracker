@@ -1,5 +1,5 @@
-import { CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from './reducers';
-import { addCategory, updateCategory, removeCategory } from './actions';
+import { CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from '../reducers/categoryReducers';
+import { addCategory, updateCategory, removeCategory } from './categoryActions';
 
 it('creates an add action', () => {
   const { type, payload } = addCategory({ category: 'Fun', subCategory: 'trees' });
@@ -12,7 +12,7 @@ it('creates an add action', () => {
 });
 
 it('creates an update action', () => {
-  const action = updateCategory({ id: 111, subCategory: 'phone'});
+  const action = updateCategory({ id: 111, subCategory: 'phone' });
   expect(action).toEqual({
     type: CATEGORY_UPDATE,
     payload: {
