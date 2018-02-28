@@ -9,7 +9,7 @@ it('Has a default of empty array', () => {
 const categoryToAdd = {
   id: 123,
   timestamp: new Date(),
-  name: 'groceries',
+  category: 'groceries',
   budget: 23
 };
 
@@ -24,10 +24,10 @@ it('Destroy a category', () => {
 });
 
 it('Update a category', () => {
-  const updated= {
+  const updated = {
     id: 123,
     timestamp: new Date(),
-    name: 'bananas',
+    category: 'bananas',
     budget: 23
   };
 
