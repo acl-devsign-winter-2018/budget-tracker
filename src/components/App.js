@@ -12,6 +12,7 @@ export default class App extends Component {
   render() {
     
     return (
+
       <Router>
         <div id="container">
           <header id="header">
@@ -28,6 +29,8 @@ export default class App extends Component {
           </footer>
         </div>
       </Router>
+    
+      
     );
   }
 }
