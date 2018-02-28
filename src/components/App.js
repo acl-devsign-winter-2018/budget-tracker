@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './app.css';
+import Categories from './category/Categories';
 
 export default class App extends Component {
 
@@ -18,9 +19,8 @@ export default class App extends Component {
           </header>
           <main id="main" role="main">
             <Switch>
-              {/* <Route exact path="/" component={Home} /> */}
-              {/* <Route path="/dashboard" component={CategoryForm}/> */}
-              {/* <Redirect to="/"/> */}
+              <Route exact path="/" component={Categories}/>
+              <Redirect to="/"/>
             </Switch>
           </main>
           <footer id="footer" role="contentinfo">
