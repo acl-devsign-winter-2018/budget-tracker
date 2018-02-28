@@ -11,10 +11,12 @@
   },
   "env": {
     "es6": true,
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "plugins": [
-    "babel"
+    "babel",
+    "jsx-a11y"
   ],
   "extends": [
     "eslint:recommended",

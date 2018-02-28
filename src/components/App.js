@@ -12,7 +12,7 @@ export default class App extends Component {
     return (
       <div id="container">
         <header id="header">
-          <h1></h1>
+          <h1>SpendLess</h1>
         </header>
         <main id="main">
         </main>
