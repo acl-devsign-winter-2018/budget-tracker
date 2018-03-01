@@ -23,7 +23,7 @@ class Category extends Component {
 
   render() {
     const { categoryObj, removeCategory } = this.props;
-    const { id, timestamp, category, budget } = categoryObj;
+    const { id, category, budget } = categoryObj;
     const { editing } = this.state;
 
     return (
