@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { removeExpense } from '../action/expenseActions';
+import { removeExpense, updateExpense } from '../action/expenseActions';
+// import ExpenseForm from './ExpenseForm.js';
 
 
 class Expense extends Component {
@@ -29,7 +30,7 @@ class Expense extends Component {
     return (
       <li className="expense">
         {editing ? 
-          <ExpenseForm buttonText={'Update'} expenseObj={expenseObj} onComplete={this.handleEdit}/> 
+          // <ExpenseForm buttonText={'Update'} expenseObj={expenseObj} onComplete={this.handleEdit}/> 
           :
           <div className="expense-item">
             <h3>{name}</h3>
@@ -50,4 +51,5 @@ class Expense extends Component {
 
 export default connect(
   null,
-  { removeExpense })(Expense);
+  { removeExpense, updateExpense }
+)(Expense);

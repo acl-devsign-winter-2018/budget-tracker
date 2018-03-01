@@ -26,6 +26,6 @@ class Dashboard extends Component {
 }
 
 export default connect(
-  state => ({ categories: state }),
+  state => ({ categories: state.categories }),
   { addCategory }
 )(Dashboard);
