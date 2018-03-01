@@ -6,7 +6,8 @@ import CategoryForm from '../categoryForm/CategoryForm';
 
 class Categories extends Component {
   render(){
-    const { categories, addCategory} = this.props;
+    const { categories, addCategory } = this.props;
+    console.log(this.props);
     return (
       <section>
         <div>
@@ -23,4 +24,4 @@ class Categories extends Component {
 export default connect(
   state => ({ categories: state }),
   { addCategory }
-)(Categories)
+)(Categories);

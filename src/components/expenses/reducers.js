@@ -39,7 +39,7 @@ export function expensesByCategory(state = {}, { type, payload }) {
         [categoryId]: categoryExpenses.filter(e => e.id !== id)
       };
     }
-    
+
     default:
       return state;
   }
