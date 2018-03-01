@@ -17,7 +17,7 @@ export default class CategoryForm extends Component {
       ...this.state
     });
 
-    this.setState({ name: '', budget: '' });
+    this.setState({ expenseName: '', amount: '' });
   };
 
   handleChange = ({ target }) => {
@@ -25,22 +25,22 @@ export default class CategoryForm extends Component {
   };
 
   render() {
-    const { id, name, budget } = this.state;
+    const { id, expenseName, amount } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="name">
+          <label htmlFor="expenseName">
             <input 
-              name="name" 
-              placeholder={ name ? { name } : 'Name' } 
-              value={name} 
+              name="expenseName" 
+              placeholder={ expenseName ? { expenseName } : 'Expense' } 
+              value={expenseName} 
               onChange={this.handleChange}/>
           </label>
-          <label htmlFor="budget">
+          <label htmlFor="amount">
             <input 
-              name="budget" 
-              placeholder={ budget ? { budget } : 'Budget' } 
-              value={budget} 
+              name="amount" 
+              placeholder={ amount ? { amount } : 'Amount' } 
+              value={amount} 
               onChange={this.handleChange}/>
           </label>
           <button type="submit">{ id ? 'Update' : 'Add' }</button>

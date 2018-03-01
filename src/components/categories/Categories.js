@@ -21,6 +21,6 @@ class Categories extends Component {
 
 export default connect(
   // mapping state and dispatch to props - connect the store to the component
-  state => ({ categories: state }),
+  state => ({ categories: state.categories }),
   { addCat }
 )(Categories);
