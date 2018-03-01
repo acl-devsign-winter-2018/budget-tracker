@@ -6,9 +6,14 @@ export default class CategoryForm extends Component {
     super(props);
 
     this.state = {
+      category: '',
+      subCategory: '',
+      budget: '',
       ...props
     };
   }
+
+
 
   handleSubmit = event => {
     event.preventDefault();
