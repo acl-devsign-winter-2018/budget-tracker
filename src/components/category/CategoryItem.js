@@ -29,7 +29,8 @@ class Category extends Component {
     return (
       <li className="category-item-holder">
         {editing ? 
-          <CategoryForm buttonText={'Update'} categoryObj={categoryObj} onComplete={this.handleEdit}/> :
+          <CategoryForm buttonText={'Update'} categoryObj={categoryObj} onComplete={this.handleEdit}/> 
+          :
           <div className="category-item">
             <h2>{category}</h2>
             <h4>${budget}</h4>
