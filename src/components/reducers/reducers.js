@@ -13,7 +13,7 @@ export function categories(state = [], { type, payload }) {
       return state.filter(n => n.id !== payload);
       //n is every obj in state, comp the id with the payload(id of thing to remove), if it doesn't match, keep it.
     case CATEGORY_UPDATE:{
-      const index = state.findIndex(n => n.id === payload);
+      const index = state.findIndex(n => n.id === payload.id);
       //findINdex returns 1st match in arr for testing funct, we're saving it to index to use later to set where to splice.
       return [
         ...state.slice(0, index),
