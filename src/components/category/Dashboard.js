@@ -13,9 +13,9 @@ class Dashboard extends Component {
     
     return (
       <Fragment>
-        <h1>Budget Dashboard</h1>
+        <h1>Dashboard</h1>
         <div className="category-add">
-          <h2>Add A Category</h2>
+          <h2>Add An Expense Category</h2>
           <CategoryForm buttonText={'Add'} onComplete={addCategory}/>
         </div>
         <ul className="category-list">
