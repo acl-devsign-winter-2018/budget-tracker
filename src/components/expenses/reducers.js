@@ -30,8 +30,16 @@ export function expensesByCategory(state = {}, { type, payload }) {
       };
     }
 
+    case EXPENSES_DESTROY: {
+      const { id, categoryId } = payload;
+      const categoryExpenses = state[categoryId];
 
-
+      return {
+        ...state,
+        [categoryId]: categoryExpenses.filter(e => e.id !== id)
+      };
+    }
+    
     default:
       return state;
   }

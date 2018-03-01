@@ -12,7 +12,7 @@ const addCategory = () => expensesByCategory({}, {
   payload: { id: 123 }
 });
 
-it('adds an entry when expenses are added', () => {
+it('adds an entry when category are added', () => {
   const state = addCategory();
   expect(state).toEqual({ 123: [] });
 });
@@ -23,4 +23,34 @@ it('removes expenses when category is removed', () => {
     payload: 123,
   });
   expect(state).toEqual({});
+});
+
+it('adds and removes a expenses from a category', () => {
+  const prevState = addCategory();
+  const expenses = {
+    id: 456,
+    categoryId: 123,
+    text: 'a big expenses'
+  };
+
+  const addedState = expensesByCategory(prevState, {
+    type: EXPENSES_CREATE,
+    payload: expenses
+  });
+
+  expect(addedState).toEqual({
+    123:[expenses]
+  });
+
+  const removedState = expensesByCategory(addedState, {
+    type: EXPENSES_DESTROY,
+    payload: {
+      id: 456,
+      categoryId: 123
+    }
+  });
+
+  expect(removedState).toEqual({
+    123: []
+  });
 });
