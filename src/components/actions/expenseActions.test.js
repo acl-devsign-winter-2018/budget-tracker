@@ -1,5 +1,5 @@
-import { addExpense, removeExpense } from './expenseActions';
-import { EXPENSE_ADD, EXPENSE_REMOVE } from  '../reducers/expensesReducers';
+import { addExpense, removeExpense, updateExpense } from './expenseActions';
+import { EXPENSE_ADD, EXPENSE_REMOVE, EXPENSE_UPDATE } from  '../reducers/expensesReducers';
 
 it('adds an expense', () => {
   const categoryId = 111;
@@ -18,5 +18,17 @@ it('removes an expense', () => {
   expect(action).toEqual({
     type: EXPENSE_REMOVE,
     payload: { categoryId, id }
+  });
+});
+
+it('creates an update action', () => {
+  const action = updateExpense({ id: 123, categoryId: 111, price: 200 });
+  expect(action).toEqual({
+    type: EXPENSE_UPDATE,
+    payload: {
+      id: 123,
+      categoryId: 111,
+      price: 200
+    }
   });
 });

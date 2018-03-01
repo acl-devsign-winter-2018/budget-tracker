@@ -1,6 +1,13 @@
 import { expensesByCategory } from './expensesReducers';
 import { CATEGORY_ADD, CATEGORY_REMOVE } from './categoryReducers';
-import { EXPENSE_ADD, EXPENSE_REMOVE } from './expensesReducers';
+import { EXPENSE_ADD, EXPENSE_REMOVE, EXPENSE_UPDATE } from './expensesReducers';
+
+const expense = {
+  id: 123,
+  categoryId: 111,
+  price: 111,
+  name: 'stuff'
+};
 
 it('has default state of {}', () => {
   const state = expensesByCategory(undefined, {});
@@ -25,14 +32,10 @@ it('removes expenses when a category is removed', () => {
   expect(state).toEqual({});
 });
 
+
+
 it('adds and removes an expense from a category', () => {
   const prevState = addCategory();
-  const expense = {
-    id: 123,
-    categoryId: 111,
-    price: 111,
-    name: 'stuff'
-  };
   
   const addedState = expensesByCategory(prevState, {
     type: EXPENSE_ADD,
@@ -55,4 +58,32 @@ it('adds and removes an expense from a category', () => {
     111: []
   });
   
+});
+
+const expenses = {
+  111: [
+    {
+      id: 123,
+      name: 'stuff',
+      price: 111,
+    }
+  ]
+};
+
+it('expense update', () => {
+  const update = {
+    id: 123,
+    categoryId: 111,
+    updates: {
+      price: 300
+    }
+  };
+
+  const state = expensesByCategory(expenses, { type: EXPENSE_UPDATE, payload: update });
+  expect(state).toEqual({ 
+    ...expenses,
+    [update.id]: {
+      ...update.updates 
+    }
+  });
 });
