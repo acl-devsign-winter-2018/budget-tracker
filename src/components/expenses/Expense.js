@@ -11,7 +11,11 @@ class Expense extends Component {
   };
 
   handleEdit = expense => {
-    this.props.updateExpense(expense);
+    this.props.updateExpense({
+      id: expense.id,
+      categoryId: this.categoryId,
+      updates: expense
+    });
     this.setState({ editing: false });
   };
 
@@ -24,6 +28,7 @@ class Expense extends Component {
   render() {
     const { expenseObj, removeExpense } = this.props;
     const { id, categoryId, name, price } = expenseObj;
+    this.categoryId = categoryId;
     const { editing } = this.state;
 
 

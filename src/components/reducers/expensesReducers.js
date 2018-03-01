@@ -38,8 +38,6 @@ export function expensesByCategory(state = {}, { type, payload }) {
       };
     }
     case EXPENSE_UPDATE: {
-      console.log('*****************', state);
-      console.log(state[categoryId]);
       const { id, categoryId, updates } = payload;
       const categoryExpenses = state[categoryId];
       const index = categoryExpenses.findIndex(expense => expense.id === id);
