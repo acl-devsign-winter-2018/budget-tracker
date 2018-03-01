@@ -1,0 +1,35 @@
+@import '../../styles/variables.css';
+
+.category-form {
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    label {
+      margin-bottom: 1rem;
+      font-size: 1.2em;
+      font-weight: 600;
+      input {
+        text-align: center;
+        font-size: 1rem;
+        display: block;
+        margin: auto;
+        margin-top: .5rem;
+        width: 80%;
+        border-radius: .4rem;
+        padding: .4rem;
+      }
+    }
+  }
+  button {
+    font-weight: 600;
+    background-color: $light-green;
+    width: 80%;
+    padding: .4rem;
+    font-size: 1.5rem;
+    border: solid $darkest-green .2rem;
+    border-radius: .5rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
