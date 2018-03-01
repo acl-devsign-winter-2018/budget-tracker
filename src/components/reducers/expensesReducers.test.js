@@ -80,14 +80,14 @@ it('expense update', () => {
   };
 
   const state = expensesByCategory(expenses, { type: EXPENSE_UPDATE, payload: update });
-  
-  expect(state).toEqual({ 
-  
-    ...expenses,
-    111: [{ 
-      ...expenses['111'][0],
-      ...update.updates
-    }]
-    //or hardcoded but I wanted to keep this example
+
+  expect(state).toEqual({
+    111: [
+      {
+        id: 123,
+        name: 'stuff',
+        price: 300,
+      }
+    ]
   });
 });
