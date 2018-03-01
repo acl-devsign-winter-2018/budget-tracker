@@ -11,6 +11,12 @@ export function expensesByCategory(state = {}, { type, payload }) {
         [payload.id]: []
       };
 
+    case CATEGORY_DESTROY: {
+      const nextState = { ...state };
+      delete nextState[payload];
+      return nextState;
+    }
+
     case EXPENSES_CREATE: {
       const { categoryId } = payload;
       const categoryExpenses = state[categoryId];
@@ -23,6 +29,8 @@ export function expensesByCategory(state = {}, { type, payload }) {
         ]
       };
     }
+
+
 
     default:
       return state;

@@ -16,3 +16,11 @@ it('adds an entry when expenses are added', () => {
   const state = addCategory();
   expect(state).toEqual({ 123: [] });
 });
+
+it('removes expenses when category is removed', () => {
+  const state = expensesByCategory({ 123: [] }, {
+    type: CATEGORY_DESTROY,
+    payload: 123,
+  });
+  expect(state).toEqual({});
+});
