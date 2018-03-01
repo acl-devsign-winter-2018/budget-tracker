@@ -3,7 +3,6 @@ const categoryToAdd = {
   id: 123,
   timestamp: new Date(),
   category:'Utilities',
-  subCategory: 'Water',
   budget: 100
 };
 
@@ -32,12 +31,3 @@ it('updates a category', () => {
   expect(state).toEqual([{ ...categoryToAdd, ...update }]);
 });
 
-// it('category update', () => {
-//   const update = {
-//     id: 123,
-//     subCategory: 'groceries'
-//   };
-  
-//   const state = categories([categoryToAdd], { type: CATEGORY_UPDATE, payload: update });
-//   expect(state).toEqual([{ ...categoryToAdd, ...update }]);
-// });
