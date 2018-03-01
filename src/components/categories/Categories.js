@@ -6,7 +6,7 @@ import CategoryForm from '../categoryForm/CategoryForm';
 
 class Categories extends Component {
   render(){
-    const { categories, addCategory } = this.props;
+    const { category, addCategory } = this.props;
     console.log(this.props);
     return (
       <section>
@@ -14,7 +14,7 @@ class Categories extends Component {
           <CategoryForm onEdit={addCategory}/>
         </div>
         <ul>
-          {categories.map(category => <Category key={category.id} {...category}/>)}
+          {category.map(category => <Category key={category.id} {...category}/>)}
         </ul>
       </section>
     );
@@ -22,6 +22,6 @@ class Categories extends Component {
 }
 
 export default connect(
-  state => ({ categories: state }),
+  state => ({ category: state.category }),
   { addCategory }
 )(Categories);
