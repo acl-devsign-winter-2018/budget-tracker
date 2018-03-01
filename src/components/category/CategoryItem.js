@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateCategory, removeCategory } from '../actions/categoryActions';
 import CategoryForm from './CategoryForm';
 import './categoryItem.css';
+import Expenses from '../expenses/Expenses';
 
 class Category extends Component {
 
@@ -42,6 +43,7 @@ class Category extends Component {
           </button>
           <button onClick={() => removeCategory(id)}>Delete</button>
         </div>
+        <Expenses categoryId={id}/>
       </li>
     );
   }

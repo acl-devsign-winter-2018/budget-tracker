@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { addExpense } from '../actions/expenseActions';
-// import ExpenseForm from './ExpenseForm';
+import ExpenseForm from './ExpenseForm';
 import Expense from './Expense';
 
 class Expenses extends Component {
@@ -15,7 +15,7 @@ class Expenses extends Component {
     const { expenses } = this.props;
     return (
       <Fragment>
-        {/* <ExpenseForm onEdit={this.handleAdd}/> */}
+        <ExpenseForm onComplete={this.handleAdd} buttonText="Add Expense"/>
         <ul>
           {expenses.map(expense => (
             <Expense key={expense.id} expenseObj={expense}/>
