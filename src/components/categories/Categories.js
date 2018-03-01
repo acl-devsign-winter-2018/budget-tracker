@@ -8,9 +8,14 @@ class Categories extends Component {
   render(){
     const { categories, addCategory} = this.props;
     return (
-      <div>
-        <CategoryForm onEdit={addCategory}/>
-      </div>
+      <section>
+        <div>
+          <CategoryForm onEdit={addCategory}/>
+        </div>
+        <ul>
+          {categories.map(category => <Category key={category.id} {...category}/>)}
+        </ul>
+      </section>
     );
   }
 }
