@@ -10,3 +10,11 @@ export function addCategory(category) {
     payload: category
   };
 }
+
+export function updateCategory(category) {
+  return {
+    type: CATEGORY_UPDATE,
+    payload: category
+  };
+}
+
