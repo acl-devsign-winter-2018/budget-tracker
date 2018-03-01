@@ -1,4 +1,4 @@
-import { CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from '../reducers/reducers';
+import { CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_REMOVE } from '../reducers/categoryReducers';
 import { addCategory, updateCategory, removeCategory } from './actions';
 
 it('creates an add action', () => {
