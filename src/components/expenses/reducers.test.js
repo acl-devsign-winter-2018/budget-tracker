@@ -1,6 +1,6 @@
 import { expensesByCat } from './reducers';
-import { CATEGORY_ADD, CATEGORY_DESTROY } from '../categories/reducers';
-import { EXPENSE_ADD, EXPENSE_DESTROY } from './reducers';
+import { CATEGORY_ADD, CATEGORY_DELETE } from '../categories/reducers';
+import { EXPENSE_ADD, EXPENSE_DELETE } from './reducers';
 
 it('has default empty object as state', () => {
   const state = expensesByCat(undefined, {});
@@ -24,7 +24,7 @@ it('adds entry point for expenses when category is added', () => {
 
 it('removes comments and entry for comments when category is removed', () => {
   const state = expensesByCat({ 111: [] }, {
-    type: CATEGORY_DESTROY,
+    type: CATEGORY_DELETE,
     payload: 111
   });
   expect(state).toEqual({});
@@ -36,7 +36,7 @@ it('adds and removes an expense from a category', () => {
     id: 222,
     catId: 111,
     expenseName: 'Movies',
-    expenseAmt: 40
+    amount: 40
   };
 
   const addedState = expensesByCat(previousState, {
@@ -49,7 +49,7 @@ it('adds and removes an expense from a category', () => {
   });
 
   const removedState = expensesByCat(addedState, {
-    type: EXPENSE_DESTROY,
+    type: EXPENSE_DELETE,
     payload: {
       id: 222,
       catId: 111

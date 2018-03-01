@@ -1,4 +1,4 @@
-import { categories, CATEGORY_ADD, CATEGORY_DESTROY, CATEGORY_UPDATE } from './reducers';
+import { categories, CATEGORY_ADD, CATEGORY_DELETE, CATEGORY_UPDATE } from './reducers';
 
 it('Has default empty array', () => {
   const state = categories(undefined, {});
@@ -32,7 +32,7 @@ it('Adds additional category', () => {
 
 
 it('Remove a category', () => {
-  const state = categories([catToAdd], { type: CATEGORY_DESTROY, payload: 111 });
+  const state = categories([catToAdd], { type: CATEGORY_DELETE, payload: 111 });
   expect(state).toEqual([]);
 });
 

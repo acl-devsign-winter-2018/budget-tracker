@@ -1,7 +1,7 @@
-import { CATEGORY_ADD, CATEGORY_DESTROY } from '../categories/reducers';
+import { CATEGORY_ADD, CATEGORY_DELETE } from '../categories/reducers';
 
 export const EXPENSE_ADD = 'EXPENSE_ADD';
-export const EXPENSE_DESTROY = 'EXPENSE_DESTROY';
+export const EXPENSE_DELETE = 'EXPENSE_DELETE';
 
 export function expensesByCat(state = {}, { type, payload }) {
   switch(type) {
@@ -10,7 +10,7 @@ export function expensesByCat(state = {}, { type, payload }) {
         ...state,
         [payload.id]: []
       };
-    case CATEGORY_DESTROY: {
+    case CATEGORY_DELETE: {
       const nextState = { ...state };
       delete nextState[payload];
       return nextState;
@@ -28,13 +28,13 @@ export function expensesByCat(state = {}, { type, payload }) {
       };
     }
 
-    case EXPENSE_DESTROY: {
+    case EXPENSE_DELETE: {
       const { id, catId } = payload;
       const catExpenses = state[catId];
 
       return {
         ...state,
-        [catId]: catExpenses. filter(e => e.id !== id)
+        [catId]: catExpenses.filter(e => e.id !== id)
       };
     }
 

@@ -1,6 +1,6 @@
 export const CATEGORY_ADD = 'CATEGORY_ADD';
 export const CATEGORY_UPDATE = 'CATEGORY_UPDATE';
-export const CATEGORY_DESTROY = 'CATEGORY_DESTROY';
+export const CATEGORY_DELETE = 'CATEGORY_DELETE';
 
 
 export function categories(state = [], { type, payload }) {
@@ -18,7 +18,7 @@ export function categories(state = [], { type, payload }) {
         ...state.slice(index + 1)
       ];
     }
-    case CATEGORY_DESTROY:
+    case CATEGORY_DELETE:
       return state.filter(c => c.id !== payload);
     
     default:
