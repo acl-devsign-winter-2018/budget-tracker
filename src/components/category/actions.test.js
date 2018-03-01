@@ -21,3 +21,12 @@ it('creates an update action', () => {
     }
   });
 });
+
+it('creates a remove action', () => {
+  const action = removeCategory(123);
+  expect(action).toEqual({
+    type: CATEGORY_REMOVE,
+    payload: 123
+  });
+  
+});

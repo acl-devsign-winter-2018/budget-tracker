@@ -18,3 +18,9 @@ export function updateCategory(category) {
   };
 }
 
+export function removeCategory(id) {
+  return {
+    type: CATEGORY_REMOVE,
+    payload: id
+  };
+}
