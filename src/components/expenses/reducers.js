@@ -11,7 +11,18 @@ export function expensesByCategory(state = {}, { type, payload }) {
         [payload.id]: []
       };
 
-      
+    case EXPENSES_CREATE: {
+      const { categoryId } = payload;
+      const categoryExpenses = state[categoryId];
+
+      return {
+        ...state,
+        [categoryId]: [
+          ...categoryExpenses,
+          payload
+        ]
+      };
+    }
 
     default:
       return state;

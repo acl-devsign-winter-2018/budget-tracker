@@ -12,6 +12,7 @@ const addCategory = () => expensesByCategory({}, {
   payload: { id: 123 }
 });
 
-// it('adds an entry when expenses are added', () => {
-
-// })
+it('adds an entry when expenses are added', () => {
+  const state = addCategory();
+  expect(state).toEqual({ 123: [] });
+});
