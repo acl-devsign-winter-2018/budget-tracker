@@ -65,7 +65,7 @@ const expenses = {
     {
       id: 123,
       name: 'stuff',
-      price: 111,
+      price: 100
     }
   ]
 };
@@ -80,6 +80,7 @@ it('expense update', () => {
   };
 
   const state = expensesByCategory(expenses, { type: EXPENSE_UPDATE, payload: update });
+
   expect(state).toEqual({
     111: [
       {
