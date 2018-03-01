@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateCategory, removeCategory } from '../actions/categoryActions';
 import CategoryForm from './CategoryForm';
+import './categoryItem.css';
 
 class Category extends Component {
 
@@ -22,24 +23,24 @@ class Category extends Component {
 
   render() {
     const { categoryObj, removeCategory } = this.props;
-    const { id, timestamp, category, subCategory, budget } = categoryObj;
+    const { id, timestamp, category, budget } = categoryObj;
     const { editing } = this.state;
 
     return (
-      <li>
+      <li className="category-item-holder">
         {editing ? 
           <CategoryForm buttonText={'Update'} categoryObj={categoryObj} onComplete={this.handleEdit}/> :
           <div className="category-item">
-            <h2>Category: {category}</h2>
-            <h3>Sub Category: {subCategory}</h3>
-            <h4>Budget: {budget}</h4>
-            <time>Created: {timestamp.toLocaleString()}</time>
+            <h2>{category}</h2>
+            <h4>${budget}</h4>
           </div>
         }
-        <button onClick={this.handleToggleEdit}>
-          {editing ? 'cancel' : '✎'}
-        </button>
-        <button onClick={() => removeCategory(id)}>delete</button>
+        <div className="item-buttons">
+          <button onClick={this.handleToggleEdit}>
+            {editing ? 'Cancel' : '✎'}
+          </button>
+          <button onClick={() => removeCategory(id)}>Delete</button>
+        </div>
       </li>
     );
   }

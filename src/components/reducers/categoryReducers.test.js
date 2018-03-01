@@ -4,7 +4,6 @@ const categoryToAdd = {
   id: 111,
   timestamp: new Date(),
   category: 'Utilities',
-  subCategory: 'Rent',
   budget: 300
 };
 
@@ -26,7 +25,7 @@ it('category remove', () => {
 it('category update', () => {
   const update = {
     id: 111,
-    subCategory: 'groceries'
+    budget: 200
   };
 
   const state = categories([categoryToAdd], { type: CATEGORY_UPDATE, payload: update });

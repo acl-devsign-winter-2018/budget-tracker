@@ -14,7 +14,8 @@
 #footer { grid-area: footer; }
 
 #main {
-  padding: $content-padding;
+  width: 100%;
+  padding: 1rem;
   margin: 0 auto;
   text-align: center;
 }

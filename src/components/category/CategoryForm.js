@@ -8,7 +8,6 @@ export default class CategoryForm extends Component {
 
     this.state = {
       category: '',
-      subCategory: '',
       budget: '',
 
       ...props.categoryObj //spreads props into state
@@ -23,7 +22,6 @@ export default class CategoryForm extends Component {
 
     this.setState({ 
       category: '',
-      subCategory: '',
       budget: '', 
     });
   };
@@ -33,19 +31,15 @@ export default class CategoryForm extends Component {
   };
 
   render() {
-    const { id, category, subCategory, budget } = this.state;
+    const { id, category, budget } = this.state;
     const { buttonText } = this.props;
     return (
       <form className="category-form" onSubmit={this.handleSubmit}>
         <fieldset>
           <legend className="clip">{id ? 'Edit a Category' : 'Add a Category'}</legend>
 
-          <label htmlFor="category"> Main Category:
+          <label htmlFor="category"> Category:
           <input required name="category" value={category} onChange={this.handleChange}/>
-          </label>
-
-          <label htmlFor="subCategory"> Sub Category:
-          <input required name="subCategory" value={subCategory} onChange={this.handleChange}/>
           </label>
 
           <label htmlFor="budget"> Budget:
