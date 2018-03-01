@@ -7,7 +7,7 @@ import CategoryForm from '../categoryForm/CategoryForm';
 class Categories extends Component {
   render(){
     const { category, addCategory } = this.props;
-    console.log(this.props);
+   
     return (
       <section>
         <div>
