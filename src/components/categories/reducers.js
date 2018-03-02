@@ -1,9 +1,12 @@
 export const CATEGORY_CREATE = 'CATEGORY_CREATE';
 export const CATEGORY_UPDATE = 'CATEGORY_UPDATE';
 export const CATEGORY_DESTROY = 'CATEGORY_DESTROY';
+export const CATEGORY_LOAD = 'CATEGORY_LOAD';
 
 export function category(state = [], { type, payload }) {
   switch(type) {
+    case CATEGORY_LOAD:
+      return payload;
     case CATEGORY_CREATE:
       return [
         ...state,
