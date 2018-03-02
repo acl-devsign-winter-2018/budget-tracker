@@ -21,8 +21,12 @@ Change your project to use async actions that communicate data changes to the se
 1. You will need to add actions for CATEGORY_LOAD
     - called from `componentDidMount` of `Dashboard`
     - need to be handled in all reducers that care about loaded categories
+    - test your reducers against load action
 1. Modify all the action creators to be async
 
 ## Rubric
 
-TODO
+- fetch services **3pts**
+- convert to async actions **8pts**
+- load actions, reducers, reducers tests **4pts**
+- overall devsign **5pts**
