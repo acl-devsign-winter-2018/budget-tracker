@@ -9,17 +9,17 @@ export default class App extends Component {
       <div className="app">
         
         <header role="banner" id="header">
-          <h1>Budget Tracker</h1>
+          <h1>C&J Budget Tracker</h1>
           
-          <Categories/>
         </header>
 
         <main role="main" id="main">
+          <Categories/>
           <p>main content</p>
         </main>
 
         <footer role="contentInfo" id="footer">
-          <p>(c) Budget Tracking </p>
+          <p>(c) C&J Budget Tracking </p>
         </footer>
 
       </div>
