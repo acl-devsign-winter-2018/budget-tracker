@@ -1,10 +1,15 @@
-import { CATEGORY_ADD, CATEGORY_DELETE } from '../categories/reducers';
+import { CATEGORY_ADD, CATEGORY_DELETE, CATEGORY_LOAD } from '../categories/reducers';
 
 export const EXPENSE_ADD = 'EXPENSE_ADD';
 export const EXPENSE_DELETE = 'EXPENSE_DELETE';
 
 export function expensesByCat(state = {}, { type, payload }) {
   switch(type) {
+    case CATEGORY_LOAD:
+      return payload.reduce((map, category) => {
+        map[category.id] = category.expenses;
+        return map;
+      }, {});
     case CATEGORY_ADD:
       return {
         ...state,
