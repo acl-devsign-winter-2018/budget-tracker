@@ -1,6 +1,6 @@
 import { CATEGORY_ADD, CATEGORY_LOAD, CATEGORY_UPDATE, CATEGORY_REMOVE } from '../reducers/categoryReducers';
 import budgetApi from '../../services/budgetApi';
-
+import shortid from 'shortid';
 
 export function loadCategories() {
   return dispatch => {
@@ -15,6 +15,8 @@ export function loadCategories() {
 }
 
 export function addCategory(category) {
+  category.id = shortid();
+  
   return dispatch => {
     return budgetApi.add(category)
       .then(savedCategory => {

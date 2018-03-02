@@ -1,13 +1,16 @@
 
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { addCategory } from '../actions/categoryActions';
+import { addCategory, loadCategories } from '../actions/categoryActions';
 import CategoryItem from './CategoryItem';
 import CategoryForm from './CategoryForm';
 import './dashboard.css';
 
 class Dashboard extends Component {
-  
+  componentDidMount() {
+    this.props.loadCategories();
+  }
+
   render() {
     const { categories, addCategory } = this.props;
     
@@ -27,5 +30,6 @@ class Dashboard extends Component {
 
 export default connect(
   state => ({ categories: state.categories }),
-  { addCategory }
+  { addCategory, loadCategories }
+
 )(Dashboard);
