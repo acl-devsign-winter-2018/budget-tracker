@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateCategory, destroyCategory } from './actions';
 import CategoryForm from '../categoryForm/CategoryForm';
+import Expenses from '../expenses/Expenses';
 
 
 class Category extends Component {
@@ -11,7 +12,7 @@ class Category extends Component {
 
   handleEdit = category => {
     this.props.updateCategory(category);
-    this.setState({ editing: false});
+    this.setState({ editing: false });
   };
 
   handleToggleEdit = () => {
@@ -36,13 +37,14 @@ class Category extends Component {
             <p>
               {category}
               &nbsp;{budget}
-            &nbsp;<button onClick={() => destroyCategory(id)}>X</button>
+            &nbsp;<button onClick={() => destroyCategory(id)}>Remove</button>
 
             </p>
             <time>{timestamp.toLocaleDateString()}</time>
             <button onClick={this.handleToggleEdit}>✎</button>
           </section>
         }
+        <Expenses categoryId={id}/>
       </li>
     );
   }
