@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './expenseForm.css';
 
 export default class CategoryForm extends Component {
   

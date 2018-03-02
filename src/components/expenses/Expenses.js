@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addExpense } from '../actions/expenseActions';
 import ExpenseForm from './ExpenseForm';
 import Expense from './Expense';
+import './expenses.css';
 
 class Expenses extends Component {
   
@@ -14,14 +15,15 @@ class Expenses extends Component {
   render() {
     const { expenses } = this.props;
     return (
-      <Fragment>
+      <div className="expenses">
+        <h3>Create Expense</h3>
         <ExpenseForm onComplete={this.handleAdd} buttonText="Add Expense"/>
         <ul>
           {expenses.map(expense => (
             <Expense key={expense.id} expenseObj={expense}/>
           ))}
         </ul>
-      </Fragment>
+      </div>
     );
   }
 }

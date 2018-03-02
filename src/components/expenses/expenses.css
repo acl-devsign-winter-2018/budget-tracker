@@ -1,0 +1,9 @@
+@import '../../styles/variables.css';
+
+.expenses {
+  background-color: white;
+  border-radius: .5rem;
+  border: solid $darkest-green .1rem;
+  margin: 1rem 0;
+  padding-bottom: 1rem;
+}
