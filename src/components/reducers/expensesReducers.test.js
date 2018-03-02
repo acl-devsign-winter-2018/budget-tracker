@@ -1,5 +1,5 @@
 import { expensesByCategory } from './expensesReducers';
-import { CATEGORY_ADD, CATEGORY_REMOVE } from './categoryReducers';
+import { CATEGORY_ADD, CATEGORY_REMOVE, CATEGORY_LOAD } from './categoryReducers';
 import { EXPENSE_ADD, EXPENSE_REMOVE, EXPENSE_UPDATE } from './expensesReducers';
 
 const expense = {
@@ -32,7 +32,24 @@ it('removes expenses when a category is removed', () => {
   expect(state).toEqual({});
 });
 
+it('loads expenses from loaded categories', () => {
+  const categoriesToLoad = [
+    { id: 111, category: 'utilities', expenses: [] },
+    { id: 123, category: 'booze', 
+      expenses: [{
+        id: 333,
+        categoryId: 123,
+        name: 'mixed drinks',
+        price: 3
+      }] 
+    }];
 
+  const state = expensesByCategory({}, { type: CATEGORY_LOAD, payload: categoriesToLoad });
+  expect(state).toEqual({
+    111: [],
+    123: categoriesToLoad[1].expenses
+  });
+});
 
 it('adds and removes an expense from a category', () => {
   const prevState = addCategory();
