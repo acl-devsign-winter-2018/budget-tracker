@@ -1,18 +1,16 @@
 import { EXPENSE_ADD, EXPENSE_REMOVE, EXPENSE_UPDATE } from  '../reducers/expensesReducers';
-import shortid from 'shortid';
 import budgetApi from '../../services/budgetApi';
 
 export function addExpense(categoryId, expense) {
-  expense.id = shortid();
-  expense.categoryId = categoryId;
+
   return dispatch => {
     return budgetApi.addExpense(categoryId, expense)
-      .then(expense => {
+      .then(newExpense => {
         dispatch({
           type: EXPENSE_ADD,
           payload: {
             categoryId,
-            expense
+            newExpense
           }
         });
       });
