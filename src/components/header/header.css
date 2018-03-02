@@ -1,0 +1,27 @@
+@import '../../styles/variables.css';
+
+#header {
+  background-color: $light-green;
+  text-align: center;
+  nav {
+    ul {
+      display: flex;
+      justify-content: space-around;
+      li {
+        width: 100%;
+        a{
+          background-color: $darkest-green;
+          color: $light-green;
+          display: block;
+          width: 100%;
+          border: .2rem solid $light-green;
+          border-radius: .5rem;
+          &:hover{
+            color: $darkest-green;
+            background-color: $light-green;
+          }
+        }
+      }
+    }
+  }
+}
