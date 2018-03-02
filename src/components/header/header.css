@@ -3,6 +3,7 @@
 #header {
   background-color: $light-green;
   text-align: center;
+  border-bottom: solid $darkest-green .2rem;
   nav {
     ul {
       display: flex;

@@ -3,10 +3,20 @@
 .category-add {
   padding: .75rem;
   margin-bottom: 1rem;
-  // background-color: white;
-  // border-radius: .5rem;
   
   h2 {
     font-size: 1.5em;
+  }
+}
+
+@media (min-width: 500px) {
+  .category-add {
+    .category-form {
+      fieldset {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+    }
   }
 }
