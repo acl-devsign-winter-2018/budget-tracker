@@ -11,6 +11,8 @@ Budget Tracker - Part 3 (Async Actions)
 
 Change your project to use async actions that communicate data changes to the server.
 
+1. On all your `actions.test.js`, change to `it.skip`
+    - We will learn how to test on Monday
 1. Add a service module for making API calls
     - Robin will provide server
     - Create a method for each needed service (addCategory, addExpense, etc. etc.)
@@ -20,3 +22,7 @@ Change your project to use async actions that communicate data changes to the se
     - called from `componentDidMount` of `Dashboard`
     - need to be handled in all reducers that care about loaded categories
 1. Modify all the action creators to be async
+
+## Rubric
+
+TODO
