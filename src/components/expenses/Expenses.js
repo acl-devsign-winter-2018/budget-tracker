@@ -18,7 +18,7 @@ class Expenses extends Component {
         <ExpenseForm onEdit={this.handleAdd}/>
         <ul>
           {expenses.map(expense => (
-            <Expense key={expense._id} {...expense}/>
+            <Expense key={expense.id} {...expense}/>
           ))}
         </ul>
       </section>

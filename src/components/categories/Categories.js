@@ -17,7 +17,7 @@ class Categories extends Component {
         <CategoryForm onEdit={addCat}/>
         <ul>
           {categories.map(category => {
-            return <Category key={category._id} {...category}/>;
+            return <Category key={category.id} {...category}/>;
           })}
         </ul>
       </div>
