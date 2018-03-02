@@ -1,11 +1,11 @@
 import { EXPENSES_CREATE, EXPENSES_DESTROY } from './reducers';
 import shortid from 'shortid';
 
-export function addExpense(categoryId, expense, amount) {
+export function addExpense(categoryId, expense) {
   const payload = {
     id: shortid(),
-    expense: expense,
-    amount: amount,
+    expense: expense.expense,
+    amount: expense.amount,
     categoryId: categoryId
   };
   

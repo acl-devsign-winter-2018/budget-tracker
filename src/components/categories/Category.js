@@ -37,7 +37,7 @@ class Category extends Component {
             <p>
               {category}
               &nbsp;{budget}
-            &nbsp;<button onClick={() => destroyCategory(id)}>X</button>
+            &nbsp;<button onClick={() => destroyCategory(id)}>Remove</button>
 
             </p>
             <time>{timestamp.toLocaleDateString()}</time>

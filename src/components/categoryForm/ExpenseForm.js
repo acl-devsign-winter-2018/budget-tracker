@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-export default class CategoryForm extends Component {
+export default class ExpenseForm extends Component {
   
   constructor(props){
     super(props);
 
     this.state = {
-      category: '', budget: '', 
+      expense: '', amount: '', 
       ...props
     };
   }
@@ -20,18 +20,18 @@ export default class CategoryForm extends Component {
       this.props.onEdit({
         ...this.state
       });
-      this.setState({ category: '', budget: '' });
+      this.setState({ expense: '', amount: '' });
     };
 
     render(){
-      const { category, budget } = this.state;
+      const { expense, amount } = this.state;
       return (
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor='category'>
-          Category:<input required name='category' placeholder='enter category' value={category} onChange={this.handleChange}/>
+          <label htmlFor='expense'>
+          Expense:<input required name='expense' placeholder='enter expense' value={expense} onChange={this.handleChange}/>
           </label>
-          <label htmlFor='budget'>
-          Budget:<input name='budget' placeholder='enter budget' value={budget} onChange={this.handleChange}/>
+          <label htmlFor= 'amount'>
+          Amount:<input name= 'amount' placeholder='enter amount' value= {amount} onChange={this.handleChange}/>
           </label>
           <button type='submit'>ADD</button>
         </form>
