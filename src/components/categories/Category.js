@@ -12,7 +12,7 @@ class Category extends Component {
 
   handleEdit = category => {
     this.props.updateCategory(category);
-    this.setState({ editing: false});
+    this.setState({ editing: false });
   };
 
   handleToggleEdit = () => {
