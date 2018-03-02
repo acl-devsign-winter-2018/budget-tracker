@@ -5,7 +5,7 @@ import { removeExpense } from './actions';
 
 class Expense extends Component {
   render(){
-    const { expense, id, categoryId } = this.props;
+    const { expense, id, categoryId, removeExpense } = this.props;
 
     return (
       <li>
