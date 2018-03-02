@@ -6,7 +6,8 @@ export default class CategoryForm extends Component {
     super(props);
 
     this.state = {
-      text: '',
+      name: '',
+      budget: '',
       ...props
     };
   }

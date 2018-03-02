@@ -1,14 +1,29 @@
-import { CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_DELETE } from './reducers';
-import shortid from 'shortid';
+import { CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_DELETE, CATEGORY_LOAD } from './reducers';
+import categoriesApi from '../../services/categoriesApi';
+
+export function loadCats() {
+  return dispatch => {
+    return categoriesApi.load()
+      .then(categories => {
+        dispatch({
+          type: CATEGORY_LOAD,
+          payload: categories
+        });
+      });
+  };
+}
 
 export function addCat(cat) {
-  cat.id = shortid();
-  cat.timestamp = new Date();
-  
-  return {
-    type: CATEGORY_ADD,
-    payload: cat
-  };
+  return (dispatch) => {
+    return categoriesApi.add(cat)
+      .then(savedCat => {
+        const action = {
+          type: CATEGORY_ADD,
+          payload: savedCat
+        };
+        dispatch(action);
+      });
+  };  
 }
 
 export function updateCat(cat) {

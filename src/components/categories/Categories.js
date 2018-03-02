@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addCat } from './actions';
+import { addCat, loadCats } from './actions';
 import Category from './Category';
 import CategoryForm from './CategoryForm';
 
 class Categories extends Component {
+
+  componentDidMount() {
+    this.props.loadCats();
+  }
 
   render() {
     const { addCat, categories } = this.props;
@@ -12,7 +16,9 @@ class Categories extends Component {
       <div>
         <CategoryForm onEdit={addCat}/>
         <ul>
-          {categories.map(category => <Category key={category.id} {...category}/>)}
+          {categories.map(category => {
+            return <Category key={category._id} {...category}/>;
+          })}
         </ul>
       </div>
     );
@@ -22,5 +28,5 @@ class Categories extends Component {
 export default connect(
   // mapping state and dispatch to props - connect the store to the component
   state => ({ categories: state.categories }),
-  { addCat }
+  { addCat, loadCats }
 )(Categories);

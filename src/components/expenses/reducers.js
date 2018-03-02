@@ -8,7 +8,7 @@ export function expensesByCat(state = {}, { type, payload }) {
     case CATEGORY_ADD:
       return {
         ...state,
-        [payload.id]: []
+        [payload._id]: []
       };
     case CATEGORY_DELETE: {
       const nextState = { ...state };

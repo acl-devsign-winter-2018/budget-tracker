@@ -1,4 +1,4 @@
-import { categories, CATEGORY_ADD, CATEGORY_DELETE, CATEGORY_UPDATE } from './reducers';
+import { categories, CATEGORY_ADD, CATEGORY_DELETE, CATEGORY_UPDATE, CATEGORY_LOAD } from './reducers';
 
 it('Has default empty array', () => {
   const state = categories(undefined, {});
@@ -44,4 +44,14 @@ it('Update a category', () => {
 
   const state = categories([catToAdd], { type: CATEGORY_UPDATE, payload: updated });
   expect(state).toEqual([{ ...catToAdd, ...updated }]);
+});
+
+it('Loads categories from API', () => {
+  const loadCats = [
+    { id: 111, name: 'Entertainment', budget: 300 },
+    { id: 222, name: 'Housing', budget: 700 },
+  ];
+  
+  const state = categories([], { type: CATEGORY_LOAD, payload: loadCats });
+  expect(state).toEqual(loadCats);
 });
