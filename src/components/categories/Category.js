@@ -38,7 +38,7 @@ class Category extends Component {
         <button onClick={this.handleToggleEdit}>
           {editing ? 'cancel' : 'edit'}
         </button>
-        <button onClick={() => removeCat(id)}>X</button>
+        <button onClick={() => removeCat(id)}>Remove</button>
         <Expenses catId={id}/>
       </li>
     );

@@ -26,18 +26,26 @@ export function addCat(cat) {
   };  
 }
 
-export function updateCat(cat) {
-  return {
-    type: CATEGORY_UPDATE,
-    payload: cat
+export function updateCat(note) {
+  return dispatch => {
+    return categoriesApi.update(note)
+      .then(cat => {
+        dispatch({
+          type: CATEGORY_UPDATE,
+          payload: cat
+        });
+      });
   };
 }
 
 export function removeCat(id) {
-  
-  return {
-    type: CATEGORY_DELETE,
-    payload: id
+  return dispatch => {
+    return categoriesApi.remove(id)
+      .then(() => {
+        dispatch({
+          type: CATEGORY_DELETE,
+          payload: id
+        });
+      });
   };
 }
-

@@ -13,10 +13,28 @@ function add(cat) {
     headers: {
       'content-type': 'application/json'
     },
-  }).then( r=> r.json());
+  }).then(r => r.json());
+}
+
+function update(cat) {
+  return fetch(`${URL}/${cat.id}`, {
+    method: 'PUT',
+    body: JSON.stringify(cat),
+    headers: {
+      'content-type': 'application/json'
+    },
+  }).then(r => r.json());
+}
+
+function remove(id) {
+  return fetch(`${URL}/${id}`, {
+    method: 'DELETE'
+  }).then(r => r.json());
 }
 
 export default {
   load,
-  add
+  add,
+  update,
+  remove
 };
