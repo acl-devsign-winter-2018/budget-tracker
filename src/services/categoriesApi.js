@@ -32,9 +32,27 @@ function remove(id) {
   }).then(r => r.json());
 }
 
+function addExpense(catId, expense) {
+  return fetch(`${URL}/${catId}/expenses`, {
+    method: 'POST',
+    body: JSON.stringify(expense),
+    headers: {
+      'content-type': 'application/json'
+    },
+  }).then(r => r.json());
+}
+
+function removeExpense(catId, expId){
+  return fetch(`${URL}/${catId}/expenses/${expId}`, {
+    method: 'DELETE',
+  }).then(r => r.json());
+}
+
 export default {
   load,
   add,
   update,
-  remove
+  remove,
+  addExpense,
+  removeExpense
 };
