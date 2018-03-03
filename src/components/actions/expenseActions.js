@@ -9,8 +9,8 @@ export function addExpense(categoryId, expense) {
         dispatch({
           type: EXPENSE_ADD,
           payload: {
-            categoryId,
-            newExpense
+            categoryId: categoryId,
+            ...newExpense
           }
         });
       });

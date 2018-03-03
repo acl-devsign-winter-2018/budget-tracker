@@ -1,11 +1,11 @@
 import { CATEGORY_ADD, CATEGORY_LOAD, CATEGORY_UPDATE, CATEGORY_REMOVE } from '../reducers/categoryReducers';
 import budgetApi from '../../services/budgetApi';
-import shortid from 'shortid';
 
 export function loadCategories() {
   return dispatch => {
     return budgetApi.load()
       .then(categories => {
+        categories.map(category => category.category = category.name);
         dispatch({
           type: CATEGORY_LOAD,
           payload: categories
@@ -15,11 +15,11 @@ export function loadCategories() {
 }
 
 export function addCategory(category) {
-  category.id = shortid();
-  
+  category.name = category.category;
   return dispatch => {
     return budgetApi.add(category)
       .then(savedCategory => {
+        savedCategory.category = savedCategory.name;
         const action = {
           type: CATEGORY_ADD,
           payload: savedCategory

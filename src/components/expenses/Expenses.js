@@ -13,15 +13,16 @@ class Expenses extends Component {
   };
 
   render() {
-    const { expenses } = this.props;
+    const { expenses, categoryId } = this.props;
     return (
       <div className="expenses">
         <h3>Create Expense</h3>
         <ExpenseForm onComplete={this.handleAdd} buttonText="Add Expense"/>
         <ul>
-          {expenses.map(expense => (
-            <Expense key={expense.id} expenseObj={expense}/>
-          ))}
+          {expenses.map(expense => {
+            expense.categoryId = categoryId;
+            (<Expense key={expense.id} expenseObj={expense}/>);
+          })}
         </ul>
       </div>
     );
