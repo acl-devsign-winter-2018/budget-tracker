@@ -13,10 +13,30 @@
   .category-add {
     .category-form {
       fieldset {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        display: inherit;
+        label {
+          display: inline-block;
+          width: 50%;
+        }
       }
     }
+  }
+}
+
+@media (min-width: 800px) {
+  .category-add {
+    .category-form {
+      display: flex;
+      fieldset {
+        display: block;
+        flex-grow: 3;
+      }
+      button {
+        flex-basis: 2rem;
+        flex-grow: 1;
+        margin: 2rem 0;
+      }
+    }
+
   }
 }

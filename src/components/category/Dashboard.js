@@ -19,7 +19,7 @@ class Dashboard extends Component {
         <h1>Dashboard</h1>
         <div className="category-add">
           <h2>Add A Category</h2>
-          <CategoryForm buttonText={'Add'} onComplete={addCategory}/>
+          <CategoryForm buttonText={'Add'} categoryPlaceholder={'Utilities, Food, Vacations...'} budgetPlaceholder={'400, 6000, 123...'} onComplete={addCategory}/>
         </div>
         <ul className="category-list">
           {categories.map(category => <CategoryItem key={category.id} categoryObj={category}/>)}

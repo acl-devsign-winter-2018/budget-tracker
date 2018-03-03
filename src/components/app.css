@@ -8,17 +8,19 @@
   "main"
   "footer";
   grid-template-rows: auto 1fr auto;
+  background-color: $light-grey;
+  
 }
 #header { grid-area: header; }
 #main { grid-area: main; } 
 #footer { grid-area: footer; }
 
 #main {
+  max-width: 1300px;
   width: 100%;
   padding: 1rem;
   margin: 0 auto;
   text-align: center;
-  background-color: $light-grey;
 }
 
 #footer {

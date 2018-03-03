@@ -17,7 +17,7 @@ class Expenses extends Component {
     return (
       <div className="expenses">
         <h3>Create Expense</h3>
-        <ExpenseForm onComplete={this.handleAdd} buttonText="Add Expense"/>
+        <ExpenseForm onComplete={this.handleAdd} expensePlaceholder={'Phone bill, groceries, car payment'} pricePlaceholder={'50, 12, 145...'} buttonText="Add Expense"/>
         <ul>
           {expenses.map(expense => 
             <Expense key={expense.id} expenseObj={expense}/>
