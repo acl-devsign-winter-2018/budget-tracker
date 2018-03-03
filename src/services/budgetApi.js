@@ -51,7 +51,7 @@ function removeExpense(categoryId, expenseId) {
 function updateExpense(categoryId, expense) {
   return fetch(`${URL}/${categoryId}/expenses/${expense.id}`, {
     method: 'PUT',
-    body: JSON.stringify(expense),
+    body: JSON.stringify(expense.updates),
     headers: {
       'content-type': 'application/json'
     },

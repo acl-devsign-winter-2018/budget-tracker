@@ -90,10 +90,9 @@ const expenses = {
 it('expense update', () => {
   const update = {
     id: 123,
+    name: 'stuff',
     categoryId: 111,
-    updates: {
-      price: 300
-    }
+    price: 300
   };
 
   const state = expensesByCategory(expenses, { type: EXPENSE_UPDATE, payload: update });
@@ -101,9 +100,7 @@ it('expense update', () => {
   expect(state).toEqual({
     111: [
       {
-        id: 123,
-        name: 'stuff',
-        price: 300,
+        ...update
       }
     ]
   });

@@ -30,9 +30,11 @@ export function addCategory(category) {
 }
 
 export function updateCategory(category) {
+  category.name = category.category;
   return dispatch => {
     return budgetApi.update(category)
       .then(updatedCategory => {
+        updatedCategory.category = updatedCategory.name;
         dispatch({
           type: CATEGORY_UPDATE,
           payload: updatedCategory
