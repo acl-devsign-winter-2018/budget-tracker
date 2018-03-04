@@ -31,18 +31,19 @@ class Category extends Component {
         {editing ? 
           <div>                   
             <CategoryForm id={id} text={name} onEdit={this.handleEdit}/>
-            <button onClick={this.handleToggleEdit}>cancel</button>
+          
+            <button id="button" onClick={this.handleToggleEdit}>cancel</button>
           </div>
           :
           <section>
             <p>
               {name}
               &nbsp;{budget}
-            &nbsp;<button onClick={() => destroyCategory(id)}>Remove</button>
+            &nbsp;<button id="button" onClick={() => destroyCategory(id)}>Remove</button>
 
             </p>
             <time>{timeStamp.toLocaleDateString()}</time>
-            <button onClick={this.handleToggleEdit}>✎</button>
+            <button id="button" onClick={this.handleToggleEdit}>✎</button>
           </section>
         }
         <Expenses categoryId={id} name/>
