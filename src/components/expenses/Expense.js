@@ -5,11 +5,13 @@ import { removeExpense } from './actions';
 
 class Expense extends Component {
   render(){
-    const { expense, id, categoryId, removeExpense } = this.props;
+    const { name, id, categoryId, removeExpense, price } = this.props;
 
     return (
       <li>
-        { expense }
+        { name } 
+        &nbsp; { price }
+        &nbsp;
         <button onClick={() => removeExpense(id, categoryId)}>Remove</button>
       </li>
     );

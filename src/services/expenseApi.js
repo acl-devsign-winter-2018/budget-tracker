@@ -1,5 +1,6 @@
-const user = 'charlieandjenny'
-const URL = `https://budget-tracker-server.herokuapp.com/api/${user}/category`;
+const user = 'charlieandjenny';
+
+const URL = `https://budget-tracker-server.herokuapp.com/api/${user}/categories`;
 
 function load() {
   return fetch(URL)
@@ -16,6 +17,32 @@ function add(category) {
   }).then(response => response.json());
 }
 
+function remove(id){
+  return fetch(`${URL}/${id}`, {
+    method: 'DELETE'
+  }).then(response => response.json());
+}
+
+function addExpense(categoryId, expense){
+  return fetch(`${URL}/${categoryId}/expenses`, {
+    method: 'POST',
+    body: JSON.stringify(expense),
+    headers: {
+      'content-type': 'application/json'
+    },
+  }).then(response => response.json());
+}
+
+function removeExpense(id, categoryId){
+  return fetch(`${URL}/${categoryId}/expenses/${id}`, {
+    method: 'DELETE'
+  }).then(response => response.json());
+}
+
 export default {
-  add
+  add,
+  remove,
+  addExpense,
+  removeExpense
 };
+

@@ -17,15 +17,30 @@ export function loadCategories() {
 
 
 // category may be an issue
+// export function addCategory(category) {
+
+//   category.id = shortid();
+//   category.timestamp = new Date();
+
+//   return {
+//     type: CATEGORY_CREATE,
+//     payload: category
+//   };
+// }
+
 export function addCategory(category) {
 
-  category.id = shortid();
-  category.timestamp = new Date();
+  return (dispatch)=>{
+    return expenseApi.add(category)
+      .then(savedCategory => {
+        const action = {
+          type: CATEGORY_CREATE,
+          payload: savedCategory
+        };
 
-  return {
-    type: CATEGORY_CREATE,
-    payload: category
-  };
+        dispatch(action);
+      });
+  }; 
 }
 
 export function updateCategory(category){
@@ -35,9 +50,21 @@ export function updateCategory(category){
   };
 }
 
+// export function destroyCategory(id){
+//   return {
+//     type: CATEGORY_DESTROY,
+//     payload: id
+//   };
+// }
+
 export function destroyCategory(id){
-  return {
-    type: CATEGORY_DESTROY,
-    payload: id
+  return dispatch => {
+    return expenseApi.remove(id)
+      .then(() => {
+        dispatch({
+          type: CATEGORY_DESTROY,
+          payload: id
+        });
+      });
   };
 }
