@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Categories from '../categories/Categories';
 import './App.css';
+import '../../styles/reset.css';
+import '../../styles/main.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 
