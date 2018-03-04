@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../budget/Category.css';
 
 export default class CategoryForm extends Component {
 
@@ -6,6 +7,7 @@ export default class CategoryForm extends Component {
     super(props);
 
     this.state = {
+      text: '',
       ...props
     };
   }
@@ -15,8 +17,8 @@ export default class CategoryForm extends Component {
     this.props.onEdit({
       ...this.state
     });
-
     this.setState({ text: '' });
+    // console.log(this.state);
   };
 
   handleChange = ({ target }) => {
@@ -26,10 +28,14 @@ export default class CategoryForm extends Component {
   render() {
     const { id, text } = this.state;
     return (
-      <form onSubmit = {this.handleSubmit}>
-        <input required name="text" value={text}  onChange={this.handleChange}/>
-        <button type="submit">{ id ? 'Update' : 'Add' }</button>
-      </form>
+      <div>
+        <form onSubmit = {this.handleSubmit} className="add-category">
+          <label htmlFor="category">
+            <input required id="category" name="text" value={text} onChange={this.handleChange} placeholder="ex: Text"/>
+          </label>
+          <button type="submit">{ id ? 'Update Category' : 'Add' }</button>
+        </form>
+      </div>
     );
   }
 }

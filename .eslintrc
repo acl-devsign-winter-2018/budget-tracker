@@ -15,11 +15,13 @@
     "jest": true
   },
   "plugins": [
-    "babel"
+    "babel",
+    "jsx-a11y"
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
   ],
   "rules": {
       "no-console": "warn",
