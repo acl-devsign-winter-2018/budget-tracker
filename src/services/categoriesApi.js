@@ -32,8 +32,8 @@ function remove(id) {
   }).then(r => r.json());
 }
 
-function addExpense(catId, expense) {
-  return fetch(`${URL}/${catId}/expenses`, {
+function addExpense(categoryId, expense) {
+  return fetch(`${URL}/${categoryId}/expenses`, {
     method: 'POST',
     body: JSON.stringify(expense),
     headers: {
@@ -42,8 +42,8 @@ function addExpense(catId, expense) {
   }).then(r => r.json());
 }
 
-function removeExpense(catId, expId){
-  return fetch(`${URL}/${catId}/expenses/${expId}`, {
+function removeExpense(categoryId, expId){
+  return fetch(`${URL}/${categoryId}/expenses/${expId}`, {
     method: 'DELETE',
   }).then(r => r.json());
 }

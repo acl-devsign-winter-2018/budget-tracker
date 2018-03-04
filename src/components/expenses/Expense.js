@@ -4,13 +4,13 @@ import { removeExpense } from './actions';
 
 class Expense extends Component {
   render() {
-    const { id, catId, expenseName, amount, removeExpense } = this.props;
+    const { id, categoryId, name, price, removeExpense } = this.props;
 
     return (
       <li>
-        <h3>{expenseName}</h3>
-        <p>{amount}</p>
-        <button onClick={() => removeExpense(catId, id)}>X</button>
+        <h3>{name}</h3>
+        <p>{price}</p>
+        <button onClick={() => removeExpense(categoryId, id)}>X</button>
       </li>
     );
   }

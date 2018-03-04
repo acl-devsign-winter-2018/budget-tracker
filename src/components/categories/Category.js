@@ -44,7 +44,7 @@ class Category extends Component {
           <button onClick={() => removeCat(id)}>Remove</button>
         </div>
 
-        <Expenses catId={id}/>
+        <Expenses categoryId={id}/>
       </li>
     );
   }

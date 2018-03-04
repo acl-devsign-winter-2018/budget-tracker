@@ -11,7 +11,7 @@ Your lab must include the normal setup and config items
   * `id` a uuid
   * `timestamp` a date from when the category was created
   * `name` a string that is the name of the category
-  * `budget` a number that is the total amount of $ in the category 
+  * `budget` a number that is the total price of $ in the category 
   * fell free to add more to your categories if you want
 
 ##### redux

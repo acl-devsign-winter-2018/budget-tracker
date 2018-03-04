@@ -25,24 +25,24 @@ export function expensesByCat(state = {}, { type, payload }) {
     }
 
     case EXPENSE_ADD: {
-      const { catId } = payload;
-      const catExpenses = state[catId];
+      const { categoryId } = payload;
+      const catExpenses = state[categoryId];
       return {
         ...state,
-        [catId]: [
+        [categoryId]: [
           ... catExpenses,
-          payload
+          payload.savedExpense
         ]
       };
     }
 
     case EXPENSE_DELETE: {
-      const { catId, id } = payload;
-      const catExpenses = state[catId];
+      const { categoryId, id } = payload;
+      const catExpenses = state[categoryId];
       return {
         ...state,
         // throwing 'cannot read property filter of undefined' for this line:
-        [catId]: catExpenses.filter(e => e.id !== id)  
+        [categoryId]: catExpenses.filter(e => e.id !== id)  
       };
     }
 

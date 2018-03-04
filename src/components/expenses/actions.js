@@ -1,14 +1,14 @@
 import { EXPENSE_ADD, EXPENSE_DELETE } from './reducers';
 import categoriesApi from '../../services/categoriesApi';
 
-export function addExpense(catId, expense) {
+export function addExpense(categoryId, expense) {
   return (dispatch) => {
-    return categoriesApi.addExpense(catId, expense)
+    return categoriesApi.addExpense(categoryId, expense)
       .then(savedExpense => {
         dispatch({
           type: EXPENSE_ADD,
           payload: {
-            catId,
+            categoryId,
             savedExpense
           }
         });
@@ -16,13 +16,13 @@ export function addExpense(catId, expense) {
   };
 }
 
-export function removeExpense(catId, id) {
+export function removeExpense(categoryId, id) {
   return dispatch => {
-    return categoriesApi.removeExpense(catId, id)
+    return categoriesApi.removeExpense(categoryId, id)
       .then(() => {
         dispatch({
           type: EXPENSE_DELETE,
-          payload: { catId, id }
+          payload: { categoryId, id }
         });
       });
   };
