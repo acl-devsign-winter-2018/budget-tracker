@@ -4,6 +4,8 @@ import './App.css';
 import '../../styles/reset.css';
 import '../../styles/main.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import Header from './Header';
+
 
 
 export default class App extends Component {
@@ -12,12 +14,7 @@ export default class App extends Component {
     return (
       <Router>
         <div className="app"> 
-          <header role="banner" id="header">
-            <section className="head-container maxwidth-wrap">
-              <h1>C&J Budget Tracker</h1>
-            </section>
-          </header>
-
+          <Header/>
           <main role="main" id="main">
             <Switch>
               <Route exact path="/" component={Categories}/>
@@ -35,4 +32,5 @@ export default class App extends Component {
       </Router>
     );
   }
+  
 }
