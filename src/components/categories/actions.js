@@ -1,4 +1,4 @@
-import { CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_DESTROY } from './reducers';
+import { CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_DELETE } from './reducers';
 import shortid from 'shortid';
 
 export function addCat(cat) {
@@ -21,7 +21,7 @@ export function updateCat(cat) {
 export function removeCat(id) {
   
   return {
-    type: CATEGORY_DESTROY,
+    type: CATEGORY_DELETE,
     payload: id
   };
 }

@@ -1,5 +1,5 @@
 import { addCat, updateCat, removeCat } from './actions';
-import { CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_DESTROY } from './reducers';
+import { CATEGORY_ADD, CATEGORY_UPDATE, CATEGORY_DELETE } from './reducers';
 
 it('creates an action to add cat', () => {
   const { type, payload } = addCat({ budget: 3000 });
@@ -24,7 +24,7 @@ it('creates an action to update cat', () => {
 it('create an action to remove cat', () => {
   const action = removeCat(111);
   expect(action).toEqual({
-    type: CATEGORY_DESTROY,
+    type: CATEGORY_DELETE,
     payload: 111
   });
 });
