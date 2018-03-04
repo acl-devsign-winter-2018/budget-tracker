@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateCategory, removeCategory } from '../actions/categoryActions';
 import CategoryForm from './CategoryForm';
 import './categoryItem.css';
+import Expenses from '../expenses/Expenses';
 
 class Category extends Component {
 
@@ -23,13 +24,14 @@ class Category extends Component {
 
   render() {
     const { categoryObj, removeCategory } = this.props;
-    const { id, timestamp, category, budget } = categoryObj;
+    const { id, category, budget } = categoryObj;
     const { editing } = this.state;
 
     return (
       <li className="category-item-holder">
         {editing ? 
-          <CategoryForm buttonText={'Update'} categoryObj={categoryObj} onComplete={this.handleEdit}/> :
+          <CategoryForm buttonText={'Update'} categoryObj={categoryObj} onComplete={this.handleEdit}/> 
+          :
           <div className="category-item">
             <h2>{category}</h2>
             <h4>${budget}</h4>
@@ -41,6 +43,7 @@ class Category extends Component {
           </button>
           <button onClick={() => removeCategory(id)}>Delete</button>
         </div>
+        <Expenses categoryId={id}/>
       </li>
     );
   }

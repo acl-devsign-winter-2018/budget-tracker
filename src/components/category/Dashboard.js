@@ -15,7 +15,7 @@ class Dashboard extends Component {
       <Fragment>
         <h1>Dashboard</h1>
         <div className="category-add">
-          <h2>Add An Expense Category</h2>
+          <h2>Add A Category</h2>
           <CategoryForm buttonText={'Add'} onComplete={addCategory}/>
         </div>
         <ul className="category-list">
@@ -26,6 +26,6 @@ class Dashboard extends Component {
 }
 
 export default connect(
-  state => ({ categories: state }),
+  state => ({ categories: state.categories }),
   { addCategory }
 )(Dashboard);

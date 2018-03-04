@@ -1,12 +1,22 @@
 @import '../../styles/variables.css';
 
 .category-add {
-  // background-color: $light-green;
-  border-radius: .4rem/.5rem;
   padding: .75rem;
   margin-bottom: 1rem;
   
   h2 {
     font-size: 1.5em;
+  }
+}
+
+@media (min-width: 500px) {
+  .category-add {
+    .category-form {
+      fieldset {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+    }
   }
 }
