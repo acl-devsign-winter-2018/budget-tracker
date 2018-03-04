@@ -1,0 +1,37 @@
+@import '../../variables.css';
+
+.category, .editCat{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: none; 
+}
+
+.category, .editCat > button {
+  font: 300 1rem 'Open Sans', sans-serif;
+}
+
+.category {
+  width: 96%;
+  height: 4rem;  
+  margin: 1rem auto 0;
+  background: $darkgreen;
+  color: $white;
+  border-radius: 5px;
+}
+
+.editCat {
+  width: 94%;
+  margin: 0 auto;
+  background: $lightgreen;
+  border-radius: 5px;
+
+  button {
+    /* background: $darkgreen; */
+    color: $darkgreen;
+    width: 4rem;
+    height: 3rem;
+  }
+
+}

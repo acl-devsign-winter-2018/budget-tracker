@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { updateCat, removeCat } from './actions';
 import CategoryForm from './CategoryForm';
 import Expenses from '../expenses/Expenses';
+import './styles/category.css';
 
 class Category extends Component {
 
@@ -35,10 +36,14 @@ class Category extends Component {
             <time>{timestamp.toLocaleString()}</time>
           </div>
         }
-        <button onClick={this.handleToggleEdit}>
-          {editing ? 'cancel' : 'edit'}
-        </button>
-        <button onClick={() => removeCat(id)}>Remove</button>
+
+        <div className="editCat">
+          <button onClick={this.handleToggleEdit}>
+            {editing ? 'cancel' : 'edit'}
+          </button>
+          <button onClick={() => removeCat(id)}>Remove</button>
+        </div>
+
         <Expenses catId={id}/>
       </li>
     );

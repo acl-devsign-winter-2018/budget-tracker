@@ -1,0 +1,39 @@
+@import './variables.css';
+
+#root {
+  min-height: 100vh;
+  max-width: 100%;
+  display: grid;
+  grid-template-areas:
+  "header"
+  "content"
+  "footer";
+  grid-template-rows: auto 1fr auto;
+}
+
+#main-head {grid-area: header;}
+#main-footer {grid-area: footer;}
+
+#main-content {
+  grid-area: content;
+  /* display: grid;
+  grid-template-areas:
+  "ul";
+  grid-template-columns: auto 1fr auto; */
+  margin: 2rem auto;
+  padding: 0 auto;
+}
+
+header {
+  box-sizing: border-box;
+  /* background: $basegreen; */
+  /* margin-bottom: 5rem; */
+  color: $darkgreen;
+  box-shadow: 0 1px 10px 1px rgba(32,41,33,.1);
+  h1 {
+    padding: 1rem 1rem;
+    font: 800 2rem 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
