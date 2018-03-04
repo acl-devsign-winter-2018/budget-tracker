@@ -1,19 +1,29 @@
 import { EXPENSE_ADD, EXPENSE_DELETE } from './reducers';
-import shortid from 'shortid';
+import categoriesApi from '../../services/categoriesApi';
 
 export function addExpense(catId, expense) {
-  expense.id = shortid();
-  expense.catId = catId;
-
-  return {
-    type: EXPENSE_ADD,
-    payload: expense
+  return (dispatch) => {
+    return categoriesApi.addExpense(catId, expense)
+      .then(savedExpense => {
+        dispatch({
+          type: EXPENSE_ADD,
+          payload: {
+            catId,
+            savedExpense
+          }
+        });
+      });
   };
 }
 
-export function removeExpense(id, catId) {
-  return {
-    type: EXPENSE_DELETE,
-    payload: { id, catId }
+export function removeExpense(catId, id) {
+  return dispatch => {
+    return categoriesApi.removeExpense(catId, id)
+      .then(() => {
+        dispatch({
+          type: EXPENSE_DELETE,
+          payload: { catId, id }
+        });
+      });
   };
 }

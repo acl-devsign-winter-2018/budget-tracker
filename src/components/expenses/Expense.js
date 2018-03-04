@@ -10,7 +10,7 @@ class Expense extends Component {
       <li>
         <h3>{expenseName}</h3>
         <p>{amount}</p>
-        <button onClick={() => removeExpense(id, catId)}>X</button>
+        <button onClick={() => removeExpense(catId, id)}>X</button>
       </li>
     );
   }
