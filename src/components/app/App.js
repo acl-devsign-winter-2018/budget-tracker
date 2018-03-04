@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Categories from '../categories/Categories';
 import './App.css';
+import '../../styles/reset.css';
+import '../../styles/main.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-
+import Header from './Header';
 
 export default class App extends Component {
   
@@ -10,17 +12,10 @@ export default class App extends Component {
     return (
       <Router>
         <div className="app"> 
-          <header role="banner" id="header">
-            <section className="head-container maxwidth-wrap">
-              <h1>C&J Budget Tracker</h1>
-            </section>
-          </header>
-
+          <Header/>
           <main role="main" id="main">
             <Switch>
               <Route exact path="/" component={Categories}/>
-              {/* <Route path="/about" component={About}/>
-              <Route path="/contact" component={Contact}/> */}
               <Redirect to="/"/>
               <p>main content</p>
             </Switch>
@@ -33,4 +28,5 @@ export default class App extends Component {
       </Router>
     );
   }
+  
 }

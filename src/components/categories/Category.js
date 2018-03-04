@@ -45,7 +45,7 @@ class Category extends Component {
             <button onClick={this.handleToggleEdit}>✎</button>
           </section>
         }
-        <Expenses categoryId={id}/>
+        <Expenses categoryId={id} name/>
       </li>
     );
   }

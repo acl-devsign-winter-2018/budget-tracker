@@ -43,6 +43,7 @@ export default {
   add,
   remove,
   addExpense,
-  removeExpense
+  removeExpense,
+  load
 };
 

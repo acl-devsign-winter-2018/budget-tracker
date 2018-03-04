@@ -1,0 +1,15 @@
+#category-list {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    align-items: center;
+    
+    ul {
+      list-style-type: none;
+  
+}
+
+  }
+  section {
+    margin: 2rem;
+  }
