@@ -1,4 +1,4 @@
-import { EXPENSE_ADD, EXPENSE_REMOVE } from './reducer';
+import { EXPENSE_ADD, EXPENSE_REMOVE, EXPENSE_UPDATE } from './reducer';
 import shortid from 'shortid';
 
 export function addExpense(categoryId, expense) {
@@ -8,6 +8,13 @@ export function addExpense(categoryId, expense) {
 
   return {
     type: EXPENSE_ADD,
+    payload: expense
+  };
+}
+
+export function updateExpense(expense) {
+  return {
+    type: EXPENSE_UPDATE,
     payload: expense
   };
 }
