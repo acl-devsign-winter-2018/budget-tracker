@@ -1,6 +1,15 @@
 @import './variables.css';
 
+* {box-sizing: border-box;}
+
 html {height: 100%;}
+
+body {
+  min-height: 100%;
+  /* https://css-tricks.com/snippets/css/system-font-stack/ */
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  color: #222;
+}
 
 .clip {
   position: absolute !important;

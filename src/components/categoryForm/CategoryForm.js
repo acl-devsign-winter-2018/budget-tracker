@@ -31,7 +31,7 @@ export default class CategoryForm extends Component {
           Category:<input required name='category' placeholder='enter category' value={category} onChange={this.handleChange}/>
           </label>
           <label htmlFor='budget'>
-          Budget:<input name='budget' placeholder='enter budget' value={budget} onChange={this.handleChange}/>
+          &nbsp; Budget:<input name='budget' placeholder='enter budget' value={budget} onChange={this.handleChange}/>
           </label>
           <button type='submit'>ADD</button>
         </form>

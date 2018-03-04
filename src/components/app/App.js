@@ -11,7 +11,9 @@ export default class App extends Component {
       <Router>
         <div className="app"> 
           <header role="banner" id="header">
-            <h1>C&J Budget Tracker</h1>
+            <section className="head-container maxwidth-wrap">
+              <h1>C&J Budget Tracker</h1>
+            </section>
           </header>
 
           <main role="main" id="main">
