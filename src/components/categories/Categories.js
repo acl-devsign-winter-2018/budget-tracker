@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addCat, loadCats } from './actions';
 import Category from './Category';
 import CategoryForm from './CategoryForm';
+import './styles/categories.css';
 
 class Categories extends Component {
 
@@ -15,7 +16,7 @@ class Categories extends Component {
     return (
       <div>
         <CategoryForm onEdit={addCat}/>
-        <ul>
+        <ul className="catList">
           {categories.map(category => {
             return <Category key={category.id} {...category}/>;
           })}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './styles/categoryForm.css';
 
 export default class CategoryForm extends Component {
 
