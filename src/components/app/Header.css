@@ -2,14 +2,11 @@
 #main-header {
   padding: 2rem;
   height: auto;
-  /* position: relative; */
   background-color: #687A8F;
+
   #logo {
-    
     width: 64px;
-    /* margin: .5rem; */
-    /* position: absolute; */
-    
+   
   }
   section {
     display: flex;
@@ -23,8 +20,5 @@
     display: inline-block;
     text-align: center;
     margin:  -1rem auto 1rem ;
-
-
   }
-
 }

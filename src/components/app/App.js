@@ -6,8 +6,6 @@ import '../../styles/main.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Header from './Header';
 
-
-
 export default class App extends Component {
   
   render() {
@@ -18,8 +16,6 @@ export default class App extends Component {
           <main role="main" id="main">
             <Switch>
               <Route exact path="/" component={Categories}/>
-              {/* <Route path="/about" component={About}/>
-              <Route path="/contact" component={Contact}/> */}
               <Redirect to="/"/>
               <p>main content</p>
             </Switch>
