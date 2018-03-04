@@ -6,7 +6,7 @@ export default class ExpenseForm extends Component {
     super(props);
 
     this.state = {
-      expense: '', amount: '', 
+      name: '', price: '', 
       ...props
     };
   }
@@ -20,18 +20,18 @@ export default class ExpenseForm extends Component {
       this.props.onEdit({
         ...this.state
       });
-      this.setState({ expense: '', amount: '' });
+      this.setState({ name: '', price: '' });
     };
 
     render(){
-      const { expense, amount } = this.state;
+      const { name, price } = this.state;
       return (
         <form onSubmit={this.handleSubmit}>
           <label htmlFor='expense'>
-          Expense:<input required name='expense' placeholder='enter expense' value={expense} onChange={this.handleChange}/>
+          Expense:<input required name='name' placeholder='enter expense' value={name} onChange={this.handleChange}/>
           </label>
           <label htmlFor= 'amount'>
-          Amount:<input name= 'amount' placeholder='enter amount' value= {amount} onChange={this.handleChange}/>
+          Amount:<input name= 'price' placeholder='enter amount' value= {price} onChange={this.handleChange}/>
           </label>
           <button type='submit'>ADD</button>
         </form>
