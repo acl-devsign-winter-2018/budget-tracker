@@ -31,4 +31,7 @@
     background-color: #f87823;
   }
 }
+input {
+  margin: 0 .5em 0 1em;
+}
 
