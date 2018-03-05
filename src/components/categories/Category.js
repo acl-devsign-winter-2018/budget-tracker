@@ -5,6 +5,8 @@ import CategoryForm from './CategoryForm';
 import Expenses from '../expenses/Expenses';
 import './styles/category.css';
 
+const dateFormat = require('dateformat');
+
 class Category extends Component {
 
   state = {
@@ -26,6 +28,7 @@ class Category extends Component {
     const { id, name, budget, removeCat } = this.props;
     const { editing } = this.state;
     const timestamp = new Date(this.props.timestamp);
+    const date = dateFormat(timestamp, 'dddd, mmmm dS, yyyy');
 
     return (
       <li>
@@ -34,7 +37,7 @@ class Category extends Component {
           <div className="category">
             <h2>{name}</h2>
             <p>{budget}</p>
-            <time>{timestamp.toLocaleString()}</time>
+            <time>{date}</time>
           </div>
         }
 

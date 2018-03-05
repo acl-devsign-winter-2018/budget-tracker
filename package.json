@@ -12,6 +12,7 @@
     "start": "webpack-dev-server"
   },
   "dependencies": {
+    "dateformat": "^3.0.3",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
