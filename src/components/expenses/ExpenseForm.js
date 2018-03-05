@@ -34,9 +34,9 @@ export default class CategoryForm extends Component {
 
   render() {
     const { id, name, price } = this.state;
-    const { buttonText, expensePlaceholder, pricePlaceholder } = this.props;
+    const { buttonText, expensePlaceholder, pricePlaceholder, classData } = this.props;
     return (
-      <form className="expense-form" onSubmit={this.handleSubmit}>
+      <form className={`expense-form ${classData}`} onSubmit={this.handleSubmit}>
         <fieldset>
           <legend className="clip">{id ? 'Edit a Expense' : 'Add a Expense'}</legend>
 
