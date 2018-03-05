@@ -18,7 +18,7 @@ class Expense extends Component {
         updates: expense
       });
     this.setState({ editing: false });
-  }
+  };
 
   handleToggleEdit = () => {
     this.setState(prev => ({
