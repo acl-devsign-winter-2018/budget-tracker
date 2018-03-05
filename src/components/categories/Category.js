@@ -38,7 +38,7 @@ class Category extends Component {
           <section>
             <p>
               {name}
-              &nbsp; total budget ${budget}
+              &nbsp;, total budget ${budget}
             &nbsp;<button id="button" onClick={() => destroyCategory(id)}>Remove</button>
 
             </p>
