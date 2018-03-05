@@ -2,6 +2,8 @@ import { CATEGORY_ADD, CATEGORY_DELETE, CATEGORY_LOAD } from '../categories/redu
 
 export const EXPENSE_ADD = 'EXPENSE_ADD';
 export const EXPENSE_DELETE = 'EXPENSE_DELETE';
+export const EXPENSE_UPDATE = 'EXPENSE_UPDATE';
+
 
 export function expensesByCat(state = {}, { type, payload }) {
   switch(type) {
@@ -41,14 +43,26 @@ export function expensesByCat(state = {}, { type, payload }) {
       const catExpenses = state[categoryId];
       return {
         ...state,
-        // throwing 'cannot read property filter of undefined' for this line:
         [categoryId]: catExpenses.filter(e => e.id !== id)  
+      };
+    }
+
+    case EXPENSE_UPDATE: {
+      const { categoryId, id } = payload;
+      const catExpenses = state[categoryId];
+      const index = catExpenses.findIndex(e => e.id === id);
+      return { 
+        ...state,
+        [categoryId]: [
+          ...catExpenses.slice(0, index),
+          { ...payload }, 
+          ...catExpenses.slice(index + 1)
+        ]
+
       };
     }
 
     default:
       return state;
-    
   }
-
 }

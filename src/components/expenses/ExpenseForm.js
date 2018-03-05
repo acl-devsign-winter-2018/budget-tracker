@@ -44,7 +44,7 @@ export default class CategoryForm extends Component {
               value={price} 
               onChange={this.handleChange}/>
           </label>
-          <button type="submit">{ id ? 'Update' : 'Add' }</button>
+          <button type="submit">{ 'Add' }</button>
         </form>
       </div>
     );

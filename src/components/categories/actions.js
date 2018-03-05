@@ -26,9 +26,9 @@ export function addCat(cat) {
   };  
 }
 
-export function updateCat(note) {
+export function updateCat(cat) {
   return dispatch => {
-    return categoriesApi.update(note)
+    return categoriesApi.update(cat)
       .then(cat => {
         dispatch({
           type: CATEGORY_UPDATE,

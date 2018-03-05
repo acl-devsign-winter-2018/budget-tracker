@@ -48,11 +48,23 @@ function removeExpense(categoryId, expId){
   }).then(r => r.json());
 }
 
+function updateExp(categoryId, id, expense) {
+  return fetch(`${URL}/${categoryId}/expenses/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(expense),
+    headers: {
+      'content-type': 'application/json'
+    },
+  }).then(r => r.json());
+}
+
+
 export default {
   load,
   add,
   update,
   remove,
   addExpense,
-  removeExpense
+  removeExpense,
+  updateExp
 };
