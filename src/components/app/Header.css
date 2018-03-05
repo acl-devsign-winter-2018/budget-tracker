@@ -3,11 +3,12 @@
   padding: 2rem;
   height: auto;
   background-color: #687A8F;
-
+  border-bottom: 5px solid #f87823;
+  
   #logo {
     width: 64px;
-   
   }
+
   section {
     display: flex;
     flex-direction: rows;
@@ -16,9 +17,10 @@
   
   h1 {
     font-size: 2.5rem;
-    transform: translateX(-60px);
+    font-style: bold;
+    transform: translateX(-59px);
     display: inline-block;
     text-align: center;
-    margin:  -1rem auto 1rem ;
+    margin:  -1rem auto ;
   }
 }
