@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './styles/expenseForm.css';
 export default class CategoryForm extends Component {
 
   constructor(props) {
@@ -28,7 +28,7 @@ export default class CategoryForm extends Component {
   render() {
     const { id, name, price } = this.state;
     return (
-      <div>
+      <div className="exForm">
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="name">
             <input 

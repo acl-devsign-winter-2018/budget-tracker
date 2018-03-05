@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateExpense, removeExpense } from './actions';
 import ExpenseForm from './ExpenseForm';
+import './styles/expense.css';
 
 class Expense extends Component {
   

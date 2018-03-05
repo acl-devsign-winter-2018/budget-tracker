@@ -2,7 +2,8 @@
 
 #root {
   min-height: 100vh;
-  max-width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
   display: grid;
   grid-template-areas:
   "header"
@@ -26,10 +27,8 @@
 
 header {
   box-sizing: border-box;
-  /* background: $basegreen; */
-  /* margin-bottom: 5rem; */
   color: $darkgreen;
-  box-shadow: 0 1px 10px 1px rgba(32,41,33,.1);
+  box-shadow: 0 1px 1px -1px rgba(32,41,33,.1);
   h1 {
     padding: 1rem 1rem;
     font: 800 2rem 'Open Sans', sans-serif;

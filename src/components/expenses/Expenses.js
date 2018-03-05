@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addExpense } from './actions';
 import ExpenseForm from './ExpenseForm';
 import Expense from './Expense';
+import './styles/expenses.css';
 
 class Expenses extends Component {
 
@@ -16,7 +17,7 @@ class Expenses extends Component {
     return (
       <section>
         <ExpenseForm onEdit={this.handleAdd}/>
-        <ul>
+        <ul className="exList">
           {expenses.map(expense => (
             <Expense key={expense.id} {...expense}/>
           ))}

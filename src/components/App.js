@@ -6,7 +6,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="main-body">
         <header id="main-header">
           <h1>Budget Tracker</h1>
         </header>

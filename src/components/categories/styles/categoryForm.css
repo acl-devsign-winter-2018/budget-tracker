@@ -17,7 +17,7 @@ form {
     border-radius: 5px;
     border: none;
     text-align: center;
-    font: 300 1rem 'Open Sans', sans-serif;
+    font: 300 1.3rem 'Open Sans', sans-serif;
   }
 
   label > input {
@@ -30,5 +30,10 @@ form {
     width: 40%;
     background: rgba(32,41,33,.9);
     color: $white;
+    font-size: 1rem;
+  }
+
+  button:hover {
+    background: $orange;
   }
 }
