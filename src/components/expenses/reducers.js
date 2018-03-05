@@ -2,6 +2,7 @@ import { CATEGORY_CREATE, CATEGORY_DESTROY } from '../categories/reducers';
 
 export const EXPENSES_CREATE = 'EXPENSES_CREATE';
 export const EXPENSES_DESTROY = 'EXPENSES_DESTROY';
+export const EXPENSE_UPDATE = 'EXPENSE_UPDATE';
 
 export function expensesByCategory(state = {}, { type, payload }) {
   switch(type) {
@@ -37,6 +38,20 @@ export function expensesByCategory(state = {}, { type, payload }) {
       return {
         ...state,
         [categoryId]: categoryExpenses.filter(e => e.id !== id)
+      };
+    }
+
+    case EXPENSE_UPDATE: {
+      const { id, categoryId } = payload;
+      const categoryExpenses = state[categoryId];
+      const index = categoryExpenses.findIndex(expense => expense.id === id);
+      return {
+        ...state,
+        [categoryId]: [
+          ...categoryExpenses.slice(0, index),
+          { ...categoryExpenses[index], ...payload },
+          ...categoryExpenses.slice(index + 1)
+        ]
       };
     }
 

@@ -1,6 +1,6 @@
 import { CATEGORY_CREATE, CATEGORY_UPDATE, CATEGORY_DESTROY, CATEGORY_LOAD } from './reducers';
 import expenseApi from '../../services/expenseApi';
-import shortid from 'shortid';
+//import shortid from 'shortid';
 
 export function loadCategories() {
   return dispatch => {

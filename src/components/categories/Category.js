@@ -22,9 +22,9 @@ class Category extends Component {
   };
 
   render() {
-    const { id, timestamp, name, destroyCategory, budget } = this.props;
+    const { id, name, destroyCategory, budget } = this.props;
     const { editing } = this.state;
-    const timeStamp = new Date(timestamp);
+    const timestamp = new Date(this.props.timestamp);
 
     return (
       <li>
@@ -42,7 +42,7 @@ class Category extends Component {
             &nbsp;<button id="button" onClick={() => destroyCategory(id)}>Remove</button>
 
             </p>
-            <time>{timeStamp.toLocaleDateString()}</time>
+            <time>{timestamp.toLocaleDateString()}</time>
             <button id="button" onClick={this.handleToggleEdit}>✎</button>
           </section>
         }

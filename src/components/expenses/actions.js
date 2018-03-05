@@ -1,4 +1,4 @@
-import { EXPENSES_CREATE, EXPENSES_DESTROY } from './reducers';
+import { EXPENSES_CREATE, EXPENSES_DESTROY, EXPENSE_UPDATE } from './reducers';
 import shortid from 'shortid';
 import expenseApi from '../../services/expenseApi';
 
@@ -46,6 +46,18 @@ export function removeExpense(id, categoryId){
         dispatch({
           type: EXPENSES_DESTROY,
           payload: { id, categoryId }
+        });
+      });
+  };
+}
+
+export function updateExpense(categoryId, expense) {
+  return dispatch => {
+    return expenseApi.updateExpense(categoryId, expense)
+      .then(updatedExpense => {
+        dispatch({
+          type: EXPENSE_UPDATE,
+          payload: updatedExpense
         });
       });
   };
