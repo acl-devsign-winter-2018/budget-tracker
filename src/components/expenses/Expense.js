@@ -11,10 +11,10 @@ class Expense extends Component {
   };
 
   handleEdit = expense => {
-    this.props.updateExpense(this.categoryId,
+    this.props.updateExpense(this.props.categoryId,
       {
         id: expense.id,
-        categoryId: this.categoryId,
+        categoryId: this.props.categoryId,
         updates: expense
       });
     this.setState({ editing: false });
