@@ -31,7 +31,7 @@ export default class ExpenseForm extends Component {
           Expense:  <input required name='name' placeholder='enter expense' value={name} onChange={this.handleChange}/>
           </label>
           <label htmlFor= 'amount'>
-          Amount:  <input name= 'price' placeholder='enter amount' value= {price} onChange={this.handleChange}/>
+          Amount: $<input name= 'price' placeholder='enter amount' value= {price} onChange={this.handleChange}/>
           </label>
           <button type='submit'>ADD</button>
         </form>
