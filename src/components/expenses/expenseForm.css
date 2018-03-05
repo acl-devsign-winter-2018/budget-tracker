@@ -33,3 +33,44 @@
     }
   }
 }
+
+@media (min-width: 500px) {
+  .expense-form {
+    fieldset {
+      display: inherit;
+      label {
+        display: inline-block;
+      }
+      label[for="price"] {
+        width: 40%;
+      }
+      label[for="name"] {
+        width: 60%;
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .expense-form {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    fieldset {
+      display: block;
+      flex-grow: 3;
+    }
+    button {
+      flex-basis: 2rem;
+      flex-grow: 1;
+      margin: 2rem 0;
+    }
+    label[for="price"] {
+      width: 30%;
+    }
+    label[for="name"] {
+      width: 70%;
+    }
+  }
+
+}
