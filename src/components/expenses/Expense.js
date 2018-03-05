@@ -28,7 +28,7 @@ class Expense extends Component {
     return (
       <li>
         {editing ? 
-          <ExpenseForm id={id} name={name} categoryId={categoryId} onEdit={this.handleEdit}/> :
+          <ExpenseForm id={id} name={name} price={price} categoryId={categoryId} onEdit={this.handleEdit}/> :
           <div className="expense">
             <h2>{name}</h2>
             <p>{price}</p>
