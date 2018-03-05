@@ -8,7 +8,10 @@ export function addExpense(categoryId, expense){
       .then(payload => {
         dispatch({
           type: EXPENSES_CREATE,
-          payload: payload
+          payload: {
+            categoryId,
+            payload
+          }
         });
       });
   };
