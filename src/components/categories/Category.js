@@ -23,8 +23,9 @@ class Category extends Component {
   };
 
   render() {
-    const { id, timestamp, name, budget, removeCat } = this.props;
+    const { id, name, budget, removeCat } = this.props;
     const { editing } = this.state;
+    const timestamp = new Date(this.props.timestamp);
 
     return (
       <li>
