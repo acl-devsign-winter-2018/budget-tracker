@@ -23,29 +23,29 @@ export default class CategoryForm extends Component {
   };
 
   handleChange = ({ target }) => {
-    this.setState({ [target.name]: target.value });
+    this.setState({ [target.name]: target.value,  });
   };
 
   render() {
-    const { id, name, budget } = this.state;
+    const { name, budget } = this.state;
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="name">
             <input 
               name="name" 
-              placeholder={ name ? { name } : 'Name' } 
+              placeholder={name ? { name } : 'Name'} 
               value={name} 
               onChange={this.handleChange}/>
           </label>
           <label htmlFor="budget">
             <input 
               name="budget" 
-              placeholder={ budget ? { budget } : 'Budget' } 
+              placeholder={budget ? { budget } : 'Budget'} 
               value={budget} 
               onChange={this.handleChange}/>
           </label>
-          <button type="submit">{ 'Add' }</button>
+          <button type="submit">{'Add'}</button>
         </form>
       </div>
     );

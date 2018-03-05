@@ -26,7 +26,7 @@ export default class CategoryForm extends Component {
   };
 
   render() {
-    const { id, name, price } = this.state;
+    const { name, price, editing } = this.state;
     return (
       <div className="exForm">
         <form onSubmit={this.handleSubmit}>

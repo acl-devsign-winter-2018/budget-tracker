@@ -33,7 +33,7 @@ class Category extends Component {
     return (
       <li>
         {editing ? 
-          <CategoryForm id={id} name={name} onEdit={this.handleEdit}/> :
+          <CategoryForm id={id} name={name} budget={budget} onEdit={this.handleEdit}/> :
           <div className="category">
             <h2>{name}</h2>
             <p>{budget}</p>
