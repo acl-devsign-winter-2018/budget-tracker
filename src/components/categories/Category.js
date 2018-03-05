@@ -27,20 +27,18 @@ class Category extends Component {
     const timestamp = new Date(this.props.timestamp);
 
     return (
-      <li>
+      <li >
         {editing ? 
           <div>                   
             <CategoryForm id={id} text={name} onEdit={this.handleEdit} />
-          
             <button id="button" onClick={this.handleToggleEdit}>cancel</button>
           </div>
           :
-          <section>
+          <section className="margin">
             <p>
               {name}
               &nbsp;, total budget ${budget}
             &nbsp;<button id="button" onClick={() => destroyCategory(id)}>Remove</button>
-
             </p>
             <time>{timestamp.toLocaleDateString()}</time>
             <button id="button" onClick={this.handleToggleEdit}>✎</button>
