@@ -30,7 +30,7 @@ class Category extends Component {
       <li>
         {editing ? 
           <div>                   
-            <CategoryForm id={id} text={name} onEdit={this.handleEdit}/>
+            <CategoryForm id={id} text={name} onEdit={this.handleEdit} />
           
             <button id="button" onClick={this.handleToggleEdit}>cancel</button>
           </div>
@@ -38,7 +38,7 @@ class Category extends Component {
           <section>
             <p>
               {name}
-              &nbsp;{budget}
+              &nbsp; total budget ${budget}
             &nbsp;<button id="button" onClick={() => destroyCategory(id)}>Remove</button>
 
             </p>
