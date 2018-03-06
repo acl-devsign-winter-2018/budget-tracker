@@ -22,29 +22,29 @@ class Category extends Component {
   };
 
   render() {
-    const { id, timestamp, category, destroyCategory, budget } = this.props;
+    const { id, name, destroyCategory, budget } = this.props;
     const { editing } = this.state;
+    const timestamp = new Date(this.props.timestamp);
 
     return (
-      <li>
+      <li >
         {editing ? 
           <div>                   
-            <CategoryForm id={id} text={category} onEdit={this.handleEdit}/>
-            <button onClick={this.handleToggleEdit}>cancel</button>
+            <CategoryForm id={id} text={name} onEdit={this.handleEdit} />
+            <button id="button" onClick={this.handleToggleEdit}>cancel</button>
           </div>
           :
-          <section>
+          <section className="margin">
             <p>
-              {category}
-              &nbsp;{budget}
-            &nbsp;<button onClick={() => destroyCategory(id)}>Remove</button>
-
+              {name}
+              &nbsp;, total budget ${budget}
+            &nbsp;<button id="button" onClick={() => destroyCategory(id)}>Remove</button>
             </p>
             <time>{timestamp.toLocaleDateString()}</time>
-            <button onClick={this.handleToggleEdit}>✎</button>
+            <button id="button" onClick={this.handleToggleEdit}>✎</button>
           </section>
         }
-        <Expenses categoryId={id}/>
+        <Expenses categoryId={id} name/>
       </li>
     );
   }

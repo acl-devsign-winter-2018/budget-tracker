@@ -1,0 +1,26 @@
+
+#main-header {
+  padding: 2rem;
+  height: auto;
+  background-color: #687A8F;
+  border-bottom: 5px solid #f87823;
+  
+  #logo {
+    width: 64px;
+  }
+
+  section {
+    display: flex;
+    flex-direction: rows;
+    align-items: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    font-style: bold;
+    transform: translateX(-59px);
+    display: inline-block;
+    text-align: center;
+    margin:  -1rem auto ;
+  }
+}

@@ -6,7 +6,7 @@ export default class CategoryForm extends Component {
     super(props);
 
     this.state = {
-      category: '', budget: '', 
+      name: '', budget: '', 
       ...props
     };
   }
@@ -20,20 +20,20 @@ export default class CategoryForm extends Component {
       this.props.onEdit({
         ...this.state
       });
-      this.setState({ category: '', budget: '' });
+      this.setState({ name: '', budget: '' });
     };
 
     render(){
-      const { category, budget } = this.state;
+      const { name, budget } = this.state;
       return (
         <form onSubmit={this.handleSubmit}>
           <label htmlFor='category'>
-          Category:<input required name='category' placeholder='enter category' value={category} onChange={this.handleChange}/>
+          Category:<input required name='name' placeholder='enter category' value={name} onChange={this.handleChange}/>
           </label>
           <label htmlFor='budget'>
-          Budget:<input name='budget' placeholder='enter budget' value={budget} onChange={this.handleChange}/>
+          &nbsp; Budget: $<input name='budget' placeholder='enter budget' value={budget} onChange={this.handleChange}/>
           </label>
-          <button type='submit'>ADD</button>
+          <button type='submit'>Add</button>
         </form>
       );
     }
