@@ -1,16 +1,46 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { removeExpense } from './actions';
+import { updateExpense, removeExpense } from './actions';
+import ExpenseForm from './ExpenseForm';
+import './styles/expense.css';
 
 class Expense extends Component {
+  
+  state = {
+    editing: false
+  };
+
+  handleToggleEdit = () => {
+    this.setState(prev => ({
+      editing: !prev.editing
+    }));
+  };
+
+  handleEdit = expense => {
+    this.props.updateExpense(expense.categoryId, expense.id, expense);
+    this.setState({ editing: false });
+  };
+
   render() {
-    const { id, catId, expenseName, amount, removeExpense } = this.props;
+    const { id, categoryId, name, price, removeExpense } = this.props;
+    const { editing } = this.state;
 
     return (
       <li>
-        <h3>{expenseName}</h3>
-        <p>{amount}</p>
-        <button onClick={() => removeExpense(id, catId)}>X</button>
+        {editing ? 
+          <ExpenseForm id={id} name={name} price={price} categoryId={categoryId} onEdit={this.handleEdit}/> :
+          <div className="expense">
+            <h2>{name}</h2>
+            <p>{price}</p>
+          </div> 
+        }
+
+        <div className="editExpense">
+          <button onClick={this.handleToggleEdit}>
+            {editing ? 'Cancel' : 'Edit'}
+          </button>
+          <button onClick={() => removeExpense(categoryId, id)}>Remove</button>
+        </div>
       </li>
     );
   }
@@ -18,5 +48,5 @@ class Expense extends Component {
 
 export default connect(
   null,
-  { removeExpense }
+  { updateExpense, removeExpense }
 )(Expense);

@@ -1,0 +1,11 @@
+@import '../../variables.css';
+
+.exForm {
+  width: 96%;
+  margin: 1rem auto 0;
+
+  form > label > input {
+   height: 1.6rem; 
+   font-size: 1.2rem;
+  }
+}

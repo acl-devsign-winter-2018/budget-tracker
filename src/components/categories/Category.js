@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { updateCat, removeCat } from './actions';
 import CategoryForm from './CategoryForm';
 import Expenses from '../expenses/Expenses';
+import './styles/category.css';
+
+const dateFormat = require('dateformat');
 
 class Category extends Component {
 
@@ -22,24 +25,30 @@ class Category extends Component {
   };
 
   render() {
-    const { id, timestamp, name, budget, removeCat } = this.props;
+    const { id, name, budget, removeCat } = this.props;
     const { editing } = this.state;
+    const timestamp = new Date(this.props.timestamp);
+    const date = dateFormat(timestamp, 'dddd, mmmm dS, yyyy');
 
     return (
       <li>
         {editing ? 
-          <CategoryForm id={id} text={name} onEdit={this.handleEdit}/> :
+          <CategoryForm id={id} name={name} budget={budget} onEdit={this.handleEdit}/> :
           <div className="category">
             <h2>{name}</h2>
             <p>{budget}</p>
-            <time>{timestamp.toLocaleString()}</time>
+            <time>{date}</time>
           </div>
         }
-        <button onClick={this.handleToggleEdit}>
-          {editing ? 'cancel' : 'edit'}
-        </button>
-        <button onClick={() => removeCat(id)}>X</button>
-        <Expenses catId={id}/>
+
+        <div className="editCat">
+          <button onClick={this.handleToggleEdit}>
+            {editing ? 'Cancel' : 'Edit'}
+          </button>
+          <button onClick={() => removeCat(id)}>Remove</button>
+        </div>
+
+        <Expenses categoryId={id}/>
       </li>
     );
   }

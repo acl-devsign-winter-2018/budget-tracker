@@ -34,9 +34,9 @@ it('adds and removes an expense from a category', () => {
   const previousState = addCat();
   const expense = {
     id: 222,
-    catId: 111,
-    expenseName: 'Movies',
-    amount: 40
+    categoryId: 111,
+    name: 'Movies',
+    price: 40
   };
 
   const addedState = expensesByCat(previousState, {
@@ -52,7 +52,7 @@ it('adds and removes an expense from a category', () => {
     type: EXPENSE_DELETE,
     payload: {
       id: 222,
-      catId: 111
+      categoryId: 111
     }
   });
   expect(removedState).toEqual({

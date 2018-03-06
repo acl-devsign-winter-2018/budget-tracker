@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { addExpense } from './actions';
 import ExpenseForm from './ExpenseForm';
 import Expense from './Expense';
+import './styles/expenses.css';
 
 class Expenses extends Component {
 
   handleAdd = expense => {
-    const { addExpense, catId } = this.props;
-    addExpense(catId, expense);
+    const { addExpense, categoryId } = this.props;
+    addExpense(categoryId, expense);
   };
 
   render() {
@@ -16,7 +17,7 @@ class Expenses extends Component {
     return (
       <section>
         <ExpenseForm onEdit={this.handleAdd}/>
-        <ul>
+        <ul className="exList">
           {expenses.map(expense => (
             <Expense key={expense.id} {...expense}/>
           ))}
@@ -29,11 +30,11 @@ class Expenses extends Component {
 export default connect (
   ({ expensesByCat }) => ({ expensesByCat }),
   { addExpense },
-  ({ expensesByCat }, { addExpense }, { catId }) => {
+  ({ expensesByCat }, { addExpense }, { categoryId }) => {
     return {
-      expenses: expensesByCat[catId],
+      expenses: expensesByCat[categoryId],
       addExpense,
-      catId
+      categoryId
     };
   }
 )(Expenses);

@@ -1,0 +1,17 @@
+@import '../../variables.css';
+
+section, .exList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.exList {
+  margin: 1rem auto;
+  width: 96%;
+  list-style: none;
+  background: $lightgreen;
+  padding-bottom: 2rem;
+  border-radius: 5px;
+}

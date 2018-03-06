@@ -1,0 +1,50 @@
+@import '../../variables.css';
+
+li {
+  width: 96%;
+}
+.category, .editCat{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: none; 
+}
+
+.category, .editCat > button {
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+}
+
+.category {
+  height: 4rem;  
+  margin: 1rem auto 0;
+  background: $darkgreen;
+  color: $white;
+  font-size: 1.2rem;
+  font-weight: 300;
+  border-radius: 5px;
+}
+
+.editCat {
+  width: 80%;
+  height: 2rem;
+  margin: 0 auto;
+  background: $lightgreen;
+  border-radius: 5px;
+
+  button {
+    background: none;
+    color: $darkgreen;
+    width: 6rem;
+    height: 2rem;
+    font-size: .7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  button:hover {
+    text-decoration: underline;
+  }
+
+}
