@@ -16,7 +16,7 @@ Your lab must include the normal setup and config items
 
 ##### redux
 ###### reducer
-* create a category reducer in your your reducer direcoty
+* create a category reducer in your your reducer directory
 * this reducer should support the following interactions 
   * `CATEGORY_CREATE`
   * `CATEGORY_UPDATE`
@@ -67,3 +67,12 @@ The App component should set up the Provider for the redux store and the Router.
 
 ####  Documentation  
 Write a description of the project in your README.md
+
+####  Lab Teams  
+* Jenny + Charlie
+* Michael + Charly
+* Grace + Christina
+* Ivan + Jacob + Jack
+
+####  Devsign Notes
+See our [classwork repo](https://github.com/acl-devsign-winter-2018/classwork/tree/master/frontend/week02_state-redux/class02_devsign-notes)

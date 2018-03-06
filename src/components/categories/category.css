@@ -1,0 +1,37 @@
+#category-list {
+    display: flex;
+  
+    justify-content: space-between;
+    text-align: left;
+    align-items: center;
+    
+    ul {
+      list-style-type: none;
+      text-align: left;
+      margin: 4em;
+      
+    }
+    p {
+      text-transform: uppercase;
+    }
+}
+
+#button {
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 1px 1px 1px 1px;
+  color: white;
+  background-color: #fba66d;
+  text-transform: uppercase;
+  padding: .3rem .5rem;
+  transition: 0.3s ease all;
+  cursor: pointer;
+  &:hover {
+    background-color: #f87823;
+  }
+}
+input {
+  margin: 0 .5em 0 1em;
+}
+
