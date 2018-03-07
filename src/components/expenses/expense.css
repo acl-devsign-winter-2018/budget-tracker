@@ -1,0 +1,22 @@
+@import '../../styles/variables.css';
+
+.expense {
+  margin: .5rem;
+  border-radius: .3rem;
+  border: solid .1rem $darkest-green;
+  padding: .75rem;
+  color: $light-green;
+  margin-top: 1rem;
+  background-color: $green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  .expense-item {
+    h4 {
+      font-size: 2em;
+    }
+  }
+}
+.category-item-holder .expense .item-buttons button {
+  font-size: 1rem;
+}

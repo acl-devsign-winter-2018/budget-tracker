@@ -8,15 +8,3 @@
     font-size: 1.5em;
   }
 }
-
-@media (min-width: 500px) {
-  .category-add {
-    .category-form {
-      fieldset {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-      }
-    }
-  }
-}

@@ -33,3 +33,42 @@
     }
   }
 }
+
+@media (min-width: 500px) {
+  .category-form {
+    fieldset {
+      display: inherit;
+      label {
+        display: inline-block;
+      }
+      label[for="budget"] {
+        width: 40%;
+      }
+      label[for="category"] {
+        width: 60%;
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .category-form {
+    display: flex;
+    fieldset {
+      display: block;
+      flex-grow: 3;
+    }
+    button {
+      flex-basis: 2rem;
+      flex-grow: 1;
+      margin: 2rem 0;
+    }
+    label[for="budget"] {
+      width: 30%;
+    }
+    label[for="category"] {
+      width: 70%;
+    }
+  }
+
+}

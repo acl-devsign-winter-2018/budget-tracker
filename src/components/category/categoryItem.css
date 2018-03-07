@@ -29,3 +29,12 @@
     }
   }
 }
+
+@media (min-width: 500px) {
+  .category-item-holder {
+    .category-item {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+}

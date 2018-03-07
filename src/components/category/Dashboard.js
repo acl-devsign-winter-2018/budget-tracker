@@ -1,13 +1,16 @@
 
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { addCategory } from '../actions/categoryActions';
+import { addCategory, loadCategories } from '../actions/categoryActions';
 import CategoryItem from './CategoryItem';
 import CategoryForm from './CategoryForm';
 import './dashboard.css';
 
 class Dashboard extends Component {
-  
+  componentDidMount() {
+    this.props.loadCategories();
+  }
+
   render() {
     const { categories, addCategory } = this.props;
     
@@ -16,7 +19,7 @@ class Dashboard extends Component {
         <h1>Dashboard</h1>
         <div className="category-add">
           <h2>Add A Category</h2>
-          <CategoryForm buttonText={'Add'} onComplete={addCategory}/>
+          <CategoryForm buttonText={'Add'} categoryPlaceholder={'Utilities, Food, Vacations...'} budgetPlaceholder={'400, 6000, 123...'} onComplete={addCategory}/>
         </div>
         <ul className="category-list">
           {categories.map(category => <CategoryItem key={category.id} categoryObj={category}/>)}
@@ -27,5 +30,6 @@ class Dashboard extends Component {
 
 export default connect(
   state => ({ categories: state.categories }),
-  { addCategory }
+  { addCategory, loadCategories }
+
 )(Dashboard);

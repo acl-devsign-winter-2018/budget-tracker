@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeExpense, updateExpense } from '../actions/expenseActions';
 import ExpenseForm from './ExpenseForm.js';
+import './expense.css';
 
 
 class Expense extends Component {
@@ -11,11 +12,12 @@ class Expense extends Component {
   };
 
   handleEdit = expense => {
-    this.props.updateExpense({
-      id: expense.id,
-      categoryId: this.categoryId,
-      updates: expense
-    });
+    this.props.updateExpense(this.categoryId,
+      {
+        id: expense.id,
+        categoryId: this.categoryId,
+        updates: expense
+      });
     this.setState({ editing: false });
   };
 
@@ -35,7 +37,7 @@ class Expense extends Component {
     return (
       <li className="expense">
         {editing ? 
-          <ExpenseForm buttonText={'Update'} expenseObj={expenseObj} onComplete={this.handleEdit}/> :
+          <ExpenseForm buttonText={'Update'} classData={"expense-edit"} expenseObj={expenseObj} onComplete={this.handleEdit}/> :
           <div className="expense-item">
             <h3>{name}</h3>
             <h4>${price}</h4>

@@ -9,6 +9,8 @@ export default class CategoryForm extends Component {
     this.state = {
       name: '',
       price: '',
+      expensePlaceholder: '',
+      pricePlaceholder: '',
 
       ...props.expenseObj //spreads props into state
     };
@@ -32,18 +34,18 @@ export default class CategoryForm extends Component {
 
   render() {
     const { id, name, price } = this.state;
-    const { buttonText } = this.props;
+    const { buttonText, expensePlaceholder, pricePlaceholder, classData } = this.props;
     return (
-      <form className="expense-form" onSubmit={this.handleSubmit}>
+      <form className={`expense-form ${classData}`} onSubmit={this.handleSubmit}>
         <fieldset>
           <legend className="clip">{id ? 'Edit a Expense' : 'Add a Expense'}</legend>
 
           <label htmlFor="name"> Name:
-          <input required name="name" value={name} onChange={this.handleChange}/>
+          <input required name="name" value={name} placeholder={expensePlaceholder} onChange={this.handleChange}/>
           </label>
 
           <label htmlFor="price"> Price:
-          <input required name="price" value={price} onChange={this.handleChange}/>
+          <input required name="price" placeholder={pricePlaceholder} value={price} onChange={this.handleChange}/>
           </label>
 
         </fieldset>
