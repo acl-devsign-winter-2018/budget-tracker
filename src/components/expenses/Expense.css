@@ -1,0 +1,46 @@
+@import '../../styles/variables.css';
+
+.expense-ul {
+  list-style: none;
+  padding: 0 0px;
+  margin: 1.2rem 0 0;
+}
+
+.expense-li {
+  padding: 0.7rem;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid $gray;
+  transition: 0.3s ease all;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: $lightgray;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.note-remove {
+  margin: 0 0 0 0.7rem;
+  font-size: 0.7rem;
+  background-color: $lightgray;
+  color: $black;
+  transition: 0.3s ease all;
+  padding: 0.3rem 0.6rem;
+  border: 0px;
+  cursor: pointer;
+}
+
+
+@media (min-width: 700px) {
+
+  .note-remove:hover {
+    background-color: $green;
+    color: $white;
+  }
+
+}
