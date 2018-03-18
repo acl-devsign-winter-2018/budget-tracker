@@ -1,31 +1,42 @@
-import React, { Component } from 'react';
+import React, { PureComponent, Fragment } from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Categories from './budget/Categories';
 import './App.css';
+import { Signin, Signup } from './auth/User';
+import PrivateRoute from './auth/PrivateRoute';
+import Home from './home/Home';
+import Header from './header/Header';
 
-export default class App extends Component {
+export default class App extends PureComponent {
 
+  
   render() {
+    
 
     return (
       <div className="app">
-        
-        <header role="banner" id="header">
-          <section className="head-container maxwidth-wrap">
-            <h1 className="logo">Budget Tracker</h1>
-            <nav>
-              <ul>
-                <li><a href="#">Dashboard</a></li>
-              </ul>
-            </nav>
-          </section>
-          
-        </header>
+      
+        <Router>
+          <Fragment>
+            
 
-        <main role="main" id="main">
-          <section className="main-container maxwidth-wrap">
-            <Categories/>
-          </section>
-        </main>
+            <Header/>
+
+            <main role="main" id="main">
+              <section className="main-container maxwidth-wrap">
+                <Switch>
+                  <Route exact path="/" component={Home}/>
+                  <PrivateRoute exact path="/dashboard" component={Categories}/>
+                  <Route exact path="/auth/signin" component={Signin}/>
+                  <Route exact path="/auth/signup" component={Signup}/>
+                  <Redirect to="/"/>
+                </Switch>
+              </section>
+            </main>
+
+          </Fragment>
+        </Router>
+
 
         <footer role="contentinfo" id="footer">
           <section className="footer maxwidth-wrap"> 
@@ -33,8 +44,10 @@ export default class App extends Component {
             <p>Created by: <a href="https://github.com/pereztjacob" target="_blank" rel="author noopener noreferrer">Jacob</a> | <a href="https://github.com/lomax715" target="_blank" rel="author noopener noreferrer">Jack</a> | <a href="https://github.com/limongoo" target="_blank" rel="author noopener noreferrer">Ivan</a></p>
           </section>
         </footer>
-
+        
       </div>
+
     );
   }
 }
+

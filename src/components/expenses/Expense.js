@@ -36,7 +36,7 @@ class Expense extends Component {
           {editing ? 
             <ExpenseForm expenseObj={expenseObj} onEdit={this.handleEdit}/> :
             <p>{name} - {price}<br/>
-              <time>{timestamp.toLocaleString()}</time>
+              {/* <time>{timestamp.toLocaleString()}</time> */}
             </p>
           }
           <div className="buttons">

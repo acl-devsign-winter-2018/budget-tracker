@@ -22,15 +22,15 @@ class Category extends Component {
   };
 
   render() {
-    const { id, timestamp, text, removeCategory } = this.props;
+    const { id, timestamp, name, removeCategory } = this.props;
     const { editing } = this.state;
 
     return (
       <li className="category-li">
         <div>
           {editing ? 
-            <CategoryForm id={id} text={text} onEdit={this.handleEdit}/> :
-            <p><span className="category-title">{text}</span> <br/><time>Created on: {timestamp.toLocaleString()}</time></p>
+            <CategoryForm id={id} text={name} onEdit={this.handleEdit}/> :
+            <p><span className="category-title">{name}</span> <br/><time>Created on: {timestamp.toLocaleString()}</time></p>
           }
           <div className="buttons">
             <button onClick={this.handleToggleEdit}>

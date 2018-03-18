@@ -13,13 +13,14 @@ class Expenses extends Component {
   };
 
   render() {
-    const { expenses } = this.props;
+    const { expenses, categoryId } = this.props;
+    console.log(this.props);
     return (
       <section>
         <ExpenseForm onEdit={this.handleAdd}/>
         <ul className="expense-ul">
           {expenses.map(expense => (
-            <Expense key={expense.id} expenseObj={expense}/>
+            <Expense key={expense.id} categoryId={categoryId} expenseObj={expense}/>
           ))}
         </ul>
       </section>
@@ -30,7 +31,9 @@ class Expenses extends Component {
 export default connect(
   ({ expensesByCategory }) => ({ expensesByCategory }),
   { addExpense },
+
   ({ expensesByCategory }, { addExpense }, { categoryId }) => {
+  
     return {
       expenses: expensesByCategory[categoryId],
       addExpense,

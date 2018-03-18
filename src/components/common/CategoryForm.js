@@ -7,7 +7,7 @@ export default class CategoryForm extends Component {
     super(props);
 
     this.state = {
-      text: '',
+      name: '',
       ...props
     };
   }
@@ -17,8 +17,8 @@ export default class CategoryForm extends Component {
     this.props.onEdit({
       ...this.state
     });
-    this.setState({ text: '' });
-    // console.log(this.state);
+    this.setState({ name: '' });
+    console.log(this.state);
   };
 
   handleChange = ({ target }) => {
@@ -26,12 +26,12 @@ export default class CategoryForm extends Component {
   };
 
   render() {
-    const { id, text } = this.state;
+    const { id, name } = this.state;
     return (
       <div>
         <form onSubmit = {this.handleSubmit} className="add-category">
           <label htmlFor="category">
-            <input required id="category" name="text" value={text} onChange={this.handleChange} placeholder="ex: Text"/>
+            <input required id="category" name="name" value={name} onChange={this.handleChange} placeholder="ex: Text"/>
           </label>
           <button type="submit">{ id ? 'Update Category' : 'Add' }</button>
         </form>
